@@ -63,7 +63,7 @@ export default function Navbar() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-500 ease-out",
         scrolled
-          ? "glass-panel-strong border-b border-slate-200/60 shadow-sm"
+          ? "glass-panel-strong border-b border-border/60 shadow-sm"
           : "bg-transparent border-b border-transparent"
       )}
     >
@@ -106,7 +106,7 @@ export default function Navbar() {
                   "relative text-sm font-medium transition-colors duration-200",
                   isActive(link.href)
                     ? "text-primary"
-                    : "text-slate-500 hover:text-primary"
+                    : "text-muted-foreground hover:text-primary"
                 )}
               >
                 {link.label}
@@ -136,7 +136,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="relative flex h-9 w-9 items-center justify-center text-slate-500 transition-colors duration-200 hover:text-primary md:hidden"
+          className="relative flex h-9 w-9 items-center justify-center text-muted-foreground transition-colors duration-200 hover:text-primary md:hidden"
           onClick={toggleMobile}
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
@@ -175,7 +175,7 @@ export default function Navbar() {
             ? "glass-panel-strong"
             : "bg-white/95 backdrop-blur-xl",
           mobileOpen
-            ? "max-h-80 opacity-100 border-t border-slate-200/60"
+            ? "max-h-80 opacity-100 border-t border-border/60"
             : "max-h-0 opacity-0 border-t border-transparent"
         )}
         aria-hidden={!mobileOpen}
@@ -190,8 +190,8 @@ export default function Navbar() {
                   className={cn(
                     "block rounded-lg px-4 py-3 text-sm font-medium transition-all duration-200",
                     isActive(link.href)
-                      ? "bg-slate-50 text-primary"
-                      : "text-slate-600 hover:bg-slate-50 hover:text-primary"
+                      ? "bg-secondary text-primary"
+                      : "text-muted-foreground hover:bg-secondary hover:text-primary"
                   )}
                   onClick={closeMobile}
                 >
@@ -200,7 +200,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-4 border-t border-slate-200/60 pt-4">
+          <div className="mt-4 border-t border-border/60 pt-4">
             <Link
               href="/book-a-call"
               className="btn-primary flex w-full justify-center text-xs"

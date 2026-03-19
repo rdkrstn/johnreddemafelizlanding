@@ -75,6 +75,7 @@ export default async function TestimonialsPage() {
     <>
       <Navbar />
 
+      <main id="main-content">
       {/* -- Hero Section -- */}
       <section className="py-12 md:py-20">
         <Container>
@@ -319,6 +320,7 @@ export default async function TestimonialsPage() {
         </Container>
       </section>
 
+      </main>
       <Footer />
     </>
   );

@@ -9,7 +9,7 @@ interface CalendlyEmbedProps {
 export default function CalendlyEmbed({ url }: CalendlyEmbedProps) {
   return (
     <div
-      className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl"
+      className="overflow-hidden rounded-xl border border-border bg-white shadow-xl"
       role="region"
       aria-label="Schedule a strategy call"
     >

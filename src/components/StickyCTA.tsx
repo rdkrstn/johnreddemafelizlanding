@@ -43,7 +43,7 @@ export default function StickyCTA() {
             }
       }
     >
-      <div className="border-t border-slate-200/80 bg-white/90 backdrop-blur-xl px-4 py-3 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+      <div className="border-t border-border/80 bg-white/90 backdrop-blur-xl px-4 py-3 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
         <div className="flex items-center gap-3">
           <Link
             href="/book-a-call"
@@ -54,7 +54,7 @@ export default function StickyCTA() {
           <button
             type="button"
             onClick={() => setDismissed(true)}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-400 transition-colors hover:text-slate-600 hover:bg-slate-100"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary"
             aria-label="Dismiss"
           >
             <svg

@@ -10,7 +10,7 @@ import StaggerChildren from "@/components/animations/StaggerChildren";
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden pt-28 pb-32 px-6 border-b border-slate-100"
+      className="relative overflow-hidden pt-28 pb-32 px-6 border-b border-border"
       aria-label="Hero"
     >
       {/* Background glow orbs */}
@@ -48,11 +48,11 @@ export default function Hero() {
             />
 
             {/* Thin horizontal rule */}
-            <div className="border-b border-slate-100 mb-6" aria-hidden="true" />
+            <div className="border-b border-border mb-6" aria-hidden="true" />
 
             {/* Subtitle */}
             <ScrollReveal variant="fade" delay={0.3}>
-              <p className="font-sans text-xl text-slate-600 max-w-lg leading-relaxed mb-10">
+              <p className="font-sans text-xl text-muted-foreground max-w-lg leading-relaxed mb-10">
                 You run workshops, webinars, and high-ticket programs. I build
                 custom funnels, CRM automation, and AI-powered follow-up
                 that captures every lead from your ads and turns attendees
@@ -89,8 +89,8 @@ export default function Hero() {
               {/* Column 1 - offset down */}
               <div className="flex flex-col gap-5 mt-10">
                 {/* Card 1: Lead Capture */}
-                <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-8 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-                  <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-3">
+                <div className="bg-card border border-border rounded-xl shadow-sm p-8 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                  <p className="text-muted-foreground text-xs uppercase font-bold tracking-widest mb-3">
                     Lead Capture
                   </p>
                   <CountUp
@@ -118,15 +118,15 @@ export default function Hero() {
               <div className="flex flex-col gap-5">
                 {/* Card 2: Ad Tracking */}
                 <div className="bg-primary text-white rounded-xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
-                  <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-3">
+                  <p className="text-primary-foreground/60 text-xs uppercase font-bold tracking-widest mb-3">
                     Ad Visibility
                   </p>
                   <span className="font-display text-4xl font-black">Full</span>
                 </div>
 
                 {/* Card 4: Follow-up */}
-                <div className="bg-white border border-accent-teal/20 rounded-xl shadow-sm p-8 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 hover:border-accent-teal/40">
-                  <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-3">
+                <div className="bg-card border border-accent-teal/20 rounded-xl shadow-sm p-8 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 hover:border-accent-teal/40">
+                  <p className="text-muted-foreground text-xs uppercase font-bold tracking-widest mb-3">
                     Follow-Up
                   </p>
                   <span className="font-display text-4xl font-black text-accent-teal">Auto</span>

@@ -27,7 +27,7 @@ export default function ProofStrip() {
   return (
     <section
       aria-label="Trust indicators"
-      className="py-12 md:py-16 border-b border-slate-100 bg-white/50"
+      className="py-12 md:py-16 border-b border-border bg-white/50"
     >
       <Container>
         <ScrollReveal variant="fade" duration={0.5}>
@@ -35,7 +35,7 @@ export default function ProofStrip() {
             {trustItems.map((item) => (
               <span
                 key={item.label}
-                className="group flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.3em] text-slate-600 hover:text-slate-900 transition-colors duration-300 cursor-default"
+                className="group flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-default"
               >
                 <span className="transition-transform duration-300 group-hover:scale-110">
                   {item.icon}

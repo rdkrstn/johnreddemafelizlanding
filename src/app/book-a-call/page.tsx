@@ -41,7 +41,7 @@ export default function BookACallPage() {
     <>
       <Navbar />
 
-      <main className="py-12 md:py-20">
+      <main id="main-content" className="py-12 md:py-20">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* ---- LEFT COLUMN ---- */}

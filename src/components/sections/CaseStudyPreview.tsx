@@ -26,6 +26,7 @@ const tagColors = [
 export default function CaseStudyPreview({ data }: CaseStudyPreviewProps) {
   return (
     <section
+      id="results"
       className="overflow-hidden bg-primary py-24 md:py-32 lg:py-40 text-white"
       aria-label="Case Study Results"
     >

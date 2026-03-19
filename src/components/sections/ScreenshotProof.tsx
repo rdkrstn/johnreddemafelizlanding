@@ -56,7 +56,7 @@ export default function ScreenshotProof() {
                       "hover:border-accent-cyan/40 hover:shadow-[var(--shadow-glow-cyan)]",
                     ],
                     !isDark && !isAccent && [
-                      "border border-slate-100 bg-white shadow-sm",
+                      "border border-border bg-white shadow-sm",
                       "hover:shadow-[var(--shadow-elevated)]",
                     ],
                   )}
@@ -77,7 +77,7 @@ export default function ScreenshotProof() {
                   <p
                     className={cn(
                       "mb-8 text-lg font-medium leading-relaxed",
-                      isDark ? "text-white" : "text-slate-700"
+                      isDark ? "text-white" : "text-foreground"
                     )}
                   >
                     {t.quote}
@@ -87,7 +87,7 @@ export default function ScreenshotProof() {
                   <div
                     className={cn(
                       "flex items-center gap-3 border-t pt-5",
-                      isDark ? "border-white/10" : "border-slate-100"
+                      isDark ? "border-white/10" : "border-border"
                     )}
                   >
                     <div
@@ -108,7 +108,7 @@ export default function ScreenshotProof() {
                       <p
                         className={cn(
                           "text-[10px] font-bold uppercase tracking-widest",
-                          isDark ? "text-slate-300" : "text-slate-500"
+                          isDark ? "text-slate-300" : "text-muted-foreground"
                         )}
                       >
                         {t.role}

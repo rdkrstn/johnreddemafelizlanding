@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Container } from "@/components/ui/container";
 import { GlassPanel } from "@/components/ui/glass-panel";
@@ -14,7 +15,7 @@ const checkpoints = [
 
 export default function SolutionFrame() {
   return (
-    <section className="py-24 md:py-32 lg:py-40" aria-label="The Solution">
+    <section id="solution" className="py-24 md:py-32 lg:py-40" aria-label="The Solution">
       <Container>
         <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
           {/* Left column - Visual frame */}
@@ -96,13 +97,13 @@ export default function SolutionFrame() {
             </ScrollReveal>
 
             <ScrollReveal variant="slide-right" delay={0.3}>
-              <a
+              <Link
                 href="/book-a-call"
                 className="btn-primary"
                 aria-label="Book a free strategy call"
               >
                 Book a Free Strategy Call &rarr;
-              </a>
+              </Link>
             </ScrollReveal>
           </div>
         </div>

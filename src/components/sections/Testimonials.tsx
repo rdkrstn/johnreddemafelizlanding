@@ -43,7 +43,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
           <div
             className={cn(
               "relative overflow-hidden rounded-2xl",
-              "border border-slate-200 bg-white",
+              "border border-border bg-white",
               "p-10 sm:p-14 md:p-16",
               "shadow-[var(--shadow-card)]"
             )}
@@ -68,7 +68,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
 
               {/* Quote */}
               <blockquote>
-                <p className="mb-10 text-2xl font-medium italic leading-relaxed text-slate-700 sm:text-3xl md:text-4xl">
+                <p className="mb-10 text-2xl font-medium italic leading-relaxed text-foreground sm:text-3xl md:text-4xl">
                   &ldquo;{featured.quote}&rdquo;
                 </p>
               </blockquote>
@@ -77,7 +77,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
               <div className="flex items-center gap-4">
                 {/* Avatar circle with gradient ring */}
                 <div className="rounded-full ring-2 ring-accent-teal/30 ring-offset-2 ring-offset-white">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-slate-200 text-sm font-bold text-primary">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-bold text-primary">
                     {featured.initials}
                   </div>
                 </div>
@@ -85,7 +85,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
                   <p className="font-bold text-primary">
                     {featured.name}
                   </p>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
                     {featured.role}
                   </p>
                 </div>

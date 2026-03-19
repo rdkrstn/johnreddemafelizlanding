@@ -9,6 +9,7 @@ import { Terminal, Database, Layers } from "lucide-react";
 export default function FounderSection() {
   return (
     <section
+      id="about"
       aria-label="About the founder"
       className="border-t border-border py-24 md:py-32 lg:py-40"
     >
@@ -18,7 +19,7 @@ export default function FounderSection() {
           <ScrollReveal variant="slide-left">
             <div className="relative">
               <div
-                className="aspect-4/5 overflow-hidden rounded-2xl bg-linear-to-br from-slate-200 via-slate-100 to-slate-300 shadow-lg"
+                className="aspect-4/5 overflow-hidden rounded-2xl bg-linear-to-br from-secondary via-muted to-secondary shadow-lg"
                 role="img"
                 aria-label="Johnred Demafeliz - Professional photo"
               />

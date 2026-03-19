@@ -49,6 +49,7 @@ export default async function CaseStudiesPage() {
     <>
       <Navbar />
 
+      <main id="main-content">
       {/* ── Header ── */}
       <section className="pt-12 md:pt-20 pb-12">
         <Container>
@@ -240,6 +241,7 @@ export default async function CaseStudiesPage() {
         </Container>
       </section>
 
+      </main>
       <Footer />
     </>
   );
