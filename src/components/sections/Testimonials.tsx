@@ -115,7 +115,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
               href="/book-a-call"
               className="btn-primary"
             >
-              Book a Strategy Call
+              Get Results Like These
               <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>

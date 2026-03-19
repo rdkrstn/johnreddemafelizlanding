@@ -7,7 +7,7 @@ const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Testimonials", href: "/testimonials" },
-  { label: "Book a Call", href: "/book-a-call" },
+  { label: "Free Systems Audit", href: "/book-a-call" },
 ] as const;
 
 const CONNECT_LINKS = [
@@ -39,25 +39,22 @@ export default function Footer() {
               <svg
                 width="20"
                 height="20"
-                viewBox="0 0 24 24"
+                viewBox="0 0 32 32"
                 fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
                 aria-hidden="true"
                 className="text-accent-teal"
               >
-                <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                <polyline points="2 17 12 22 22 17" />
-                <polyline points="2 12 12 17 22 12" />
+                <path d="M6 22h12l4-4H10L6 22Z" fill="currentColor"/>
+                <path d="M8 16h12l4-4H12L8 16Z" fill="currentColor"/>
+                <path d="M10 10h12l4-4H14l-4 4Z" fill="currentColor"/>
               </svg>
               <span className="text-sm font-bold tracking-tight text-foreground">
                 Johnred Demafeliz
               </span>
             </div>
             <p className="mb-6 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Revenue systems consulting for founders who need infrastructure.
+              CRM, automation, and funnel infrastructure for coaches, educators,
+              and service founders who are done leaving revenue on the table.
             </p>
             <p className="text-xs text-muted-foreground">
               &copy; {new Date().getFullYear()} Johnred Demafeliz. All rights

@@ -78,22 +78,18 @@ export default function Navbar() {
           className="flex items-center gap-2.5 select-none group"
           aria-label="Johnred Demafeliz - Home"
         >
-          {/* Layers icon */}
+          {/* Brand mark — ascending system bars */}
           <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            viewBox="0 0 32 32"
             fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
             aria-hidden="true"
-            strokeLinecap="round"
-            strokeLinejoin="round"
             className="text-primary transition-transform duration-300 group-hover:scale-110"
           >
-            <polygon points="12 2 2 7 12 12 22 7 12 2" />
-            <polyline points="2 17 12 22 22 17" />
-            <polyline points="2 12 12 17 22 12" />
+            <path d="M6 22h12l4-4H10L6 22Z" fill="currentColor"/>
+            <path d="M8 16h12l4-4H12L8 16Z" fill="currentColor"/>
+            <path d="M10 10h12l4-4H14l-4 4Z" fill="currentColor"/>
           </svg>
           <span className="font-display text-xl font-bold tracking-tight text-primary uppercase">
             Johnred Demafeliz
@@ -133,7 +129,7 @@ export default function Navbar() {
             href="/book-a-call"
             className="btn-primary text-xs"
           >
-            Book Call
+            Free Audit
           </Link>
         </MagneticButton>
 
@@ -210,7 +206,7 @@ export default function Navbar() {
               className="btn-primary flex w-full justify-center text-xs"
               onClick={closeMobile}
             >
-              Book Call
+              Free Audit
             </Link>
           </div>
         </div>

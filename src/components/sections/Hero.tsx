@@ -40,7 +40,7 @@ export default function Hero() {
 
             {/* Headline */}
             <TextReveal
-              text="Fix the gaps that are costing you leads."
+              text="Your leads are leaking. Your revenue should not be."
               as="h1"
               className="display-2xl text-primary mb-6"
               delay={0.1}
@@ -53,8 +53,9 @@ export default function Hero() {
             {/* Subtitle */}
             <ScrollReveal variant="fade" delay={0.3}>
               <p className="font-sans text-xl text-slate-600 max-w-lg leading-relaxed mb-10">
-                Revenue Systems Consultant for coaches, educators, and service
-                founders. I build the infrastructure your revenue depends on.
+                I build the CRM, automation, and funnel infrastructure that
+                turns your existing traffic into closed deals — without adding
+                headcount or ad spend.
               </p>
             </ScrollReveal>
 
@@ -67,7 +68,7 @@ export default function Hero() {
                     className="btn-primary"
                     aria-label="Book a strategy call"
                   >
-                    Book a Strategy Call &rarr;
+                    Get Your Free Systems Audit &rarr;
                   </Link>
                 </MagneticButton>
                 <Link

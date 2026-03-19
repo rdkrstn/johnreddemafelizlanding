@@ -27,31 +27,33 @@ export default function FinalCTA() {
             {/* Content */}
             <div className="relative z-10 mx-auto max-w-2xl">
               <TextReveal
-                text="Ready to see what your systems should be doing?"
+                text="Stop leaving revenue on the table."
                 as="h2"
                 className="display-xl text-white mb-12"
               />
 
               <ScrollReveal variant="fade" delay={0.3}>
                 <p className="mb-12 text-lg leading-relaxed text-slate-300 md:text-xl">
-                  Book a free 30-minute diagnostic call to identify the top 3
-                  gaps in your current systems.
+                  In 15 minutes, I will identify the top 3 gaps in your current
+                  systems and map out exactly how to fix them. No pitch, no
+                  filler &mdash; just a clear action plan you can use
+                  immediately.
                 </p>
               </ScrollReveal>
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <MagneticButton>
                   <Link href="/book-a-call" className="btn-accent">
-                    Book a Strategy Call
+                    Get Your Free Systems Audit &rarr;
                   </Link>
                 </MagneticButton>
-                <Link
-                  href="/#results"
-                  className="rounded-lg border border-white/10 bg-white/10 px-8 py-4 font-bold uppercase tracking-wider text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/15"
-                >
-                  See the Evidence
-                </Link>
               </div>
+
+              <ScrollReveal variant="fade" delay={0.5}>
+                <p className="mt-6 text-sm text-slate-400">
+                  Free. No obligation. Limited spots each week.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </ScrollReveal>

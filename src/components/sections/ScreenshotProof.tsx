@@ -25,8 +25,8 @@ export default function ScreenshotProof() {
         <ScrollReveal variant="slide-up">
           <div className="mb-20">
             <SectionHeader
-              label="Proof"
-              title="Wall of Love"
+              label="What Clients Say"
+              title="The Results Speak For Themselves"
               align="center"
             />
           </div>

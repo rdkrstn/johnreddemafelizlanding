@@ -41,25 +41,27 @@ export default function FounderSection() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <h2 className="section-title mb-10">Why I Build Systems</h2>
+              <h2 className="section-title mb-10">Built for Founders Who Have Outgrown Duct Tape</h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <div className="space-y-7">
                 <p className="font-sans text-lg leading-relaxed text-muted-foreground">
-                  I spent the last decade seeing great companies hit a
-                  &ldquo;systems ceiling.&rdquo; They have product-market fit,
-                  they have a solid team, but their backend is held together by
-                  spreadsheets and hope.
+                  Over the past decade, I have worked with coaches, educators,
+                  and service founders who all hit the same wall: product-market
+                  fit is there, the team is solid, but the backend is held
+                  together by spreadsheets and hope.
                 </p>
                 <p className="font-sans text-lg leading-relaxed text-muted-foreground">
-                  My work is building the revenue infrastructure that allows
-                  growth without friction. I approach every project with
-                  operational polish and fintech-grade precision.
+                  I build the revenue infrastructure that removes that ceiling.
+                  CRM architecture, automated pipelines, and attribution systems
+                  &mdash; engineered with the same precision you would expect
+                  from a fintech team, but designed for founder-led businesses.
                 </p>
                 <p className="font-sans text-lg leading-relaxed text-muted-foreground">
-                  This isn&apos;t about quick hacks. It&apos;s about building the
-                  infrastructure for your next phase of growth.
+                  250+ systems deployed. Clients across the Philippines,
+                  Australia, and the US. No quick hacks &mdash; only
+                  infrastructure built for your next phase of growth.
                 </p>
               </div>
             </ScrollReveal>

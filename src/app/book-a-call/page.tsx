@@ -8,9 +8,9 @@ import StaggerChildren from "@/components/animations/StaggerChildren";
 import { Container } from "@/components/ui/container";
 
 export const metadata: Metadata = {
-  title: "Book a Call",
+  title: "Get Your Free Systems Audit",
   description:
-    "Book a strategy call with Johnred Demafeliz. Let's identify the bottlenecks in your growth engine and build a scalable roadmap for your business.",
+    "Book a free 15-minute systems audit with Johnred Demafeliz. Walk away with a clear action plan to fix the gaps costing you leads and revenue.",
 };
 
 const CALENDLY_URL =
@@ -35,8 +35,8 @@ const benefits = [
         <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: "15-min deep dive",
-    description: "Laser-focused strategy session. No filler.",
+    title: "15 minutes, zero fluff",
+    description: "A focused diagnostic of your current systems. We get straight to the gaps.",
   },
   {
     icon: (
@@ -55,8 +55,8 @@ const benefits = [
         <polyline points="22 4 12 14.01 9 11.01" />
       </svg>
     ),
-    title: "No-pitch strategy",
-    description: "Pure value, no sales pressure.",
+    title: "No pitch, no pressure",
+    description: "This is not a sales call. You will leave with value whether we work together or not.",
   },
   {
     icon: (
@@ -74,8 +74,8 @@ const benefits = [
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    title: "Immediate Action Plan",
-    description: "Walk away with clear next steps.",
+    title: "Walk away with a plan",
+    description: "You will get your top 3 system gaps identified and a clear roadmap to fix them.",
   },
 ];
 
@@ -91,14 +91,18 @@ export default function BookACallPage() {
             <div className="lg:col-span-5 flex flex-col gap-6">
               {/* Badge */}
               <ScrollReveal variant="fade">
-                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-                  Available for Consultation
+                <span className="inline-flex items-center gap-2 rounded-full bg-accent-teal/15 text-teal px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-teal opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-teal" />
+                  </span>
+                  Limited spots this week
                 </span>
               </ScrollReveal>
 
               {/* Headline */}
               <TextReveal
-                text="Optimize Your Revenue Systems"
+                text="Find the Gaps Costing You Revenue"
                 as="h1"
                 className="display-xl"
               />
@@ -106,9 +110,9 @@ export default function BookACallPage() {
               {/* Subtitle */}
               <ScrollReveal variant="fade" delay={0.2}>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-                  Let&apos;s identify the bottlenecks in your growth engine and
-                  build a scalable roadmap for your business. A
-                  distraction-free deep dive into your operations.
+                  Pick a time below. In 15 minutes, I will diagnose the
+                  biggest leaks in your current systems and give you a clear
+                  action plan &mdash; whether we work together or not.
                 </p>
               </ScrollReveal>
 
@@ -138,11 +142,12 @@ export default function BookACallPage() {
               <ScrollReveal variant="fade" delay={0.3}>
                 <div className="border-t border-border pt-8 mt-4">
                   <p className="text-sm text-muted-foreground italic leading-relaxed">
-                    &ldquo;The most productive 15 minutes of our quarter. Johnred
-                    dismantled our churn problem in minutes.&rdquo;
+                    &ldquo;Johnred found three revenue leaks in our funnel during
+                    a single call. We fixed them that week and saw a 40% lift in
+                    closes the following month.&rdquo;
                   </p>
                   <p className="mt-3 text-sm font-bold text-foreground">
-                    &mdash; Growth Lead @ TechScale
+                    &mdash; David L., EdTech CEO
                   </p>
                 </div>
               </ScrollReveal>

@@ -38,7 +38,7 @@ export default function CaseStudyPreview({ data }: CaseStudyPreviewProps) {
                 Success Stories
               </p>
               <h2 className="section-title text-white">
-                Precision in Practice
+                Real Systems. Measurable Revenue.
               </h2>
             </div>
           </ScrollReveal>

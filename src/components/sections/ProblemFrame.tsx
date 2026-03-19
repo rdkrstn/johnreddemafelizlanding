@@ -28,7 +28,7 @@ const problems = [
     ),
     title: "Leaking Funnels",
     description:
-      "Warm leads slip through broken follow-up sequences, costing you revenue before the first conversation even happens.",
+      "You paid to get that lead. Then your follow-up sequence dropped the ball, and they booked with someone else. This is happening every single day.",
     accentColor: "border-t-red-500",
     iconColor: "text-red-500",
   },
@@ -51,7 +51,7 @@ const problems = [
     ),
     title: "Manual Bottlenecks",
     description:
-      "Hours burned weekly on repetitive admin tasks that should be fully automated, pulling focus from high-impact work.",
+      "Your team spends 10+ hours a week on tasks a system could handle in seconds. That is not hustle -- it is infrastructure debt, and it compounds.",
     accentColor: "border-t-orange-500",
     iconColor: "text-orange-500",
   },
@@ -77,7 +77,7 @@ const problems = [
     ),
     title: "Fragmented Data",
     description:
-      "No single source of truth. Leads scattered across spreadsheets, CRMs, and inboxes make it impossible to act decisively.",
+      "Your leads live in spreadsheets, your pipeline lives in your head, and nobody can tell you which channel actually drives revenue. You are flying blind.",
     accentColor: "border-t-yellow-500",
     iconColor: "text-yellow-500",
   },
@@ -91,7 +91,7 @@ export default function ProblemFrame() {
         <ScrollReveal variant="fade">
           <SectionHeader
             label="The Diagnosis"
-            title="The High Cost of Broken Systems"
+            title="You're Losing Revenue to Systems You've Outgrown"
             align="center"
             titleClassName="text-balance"
             className="mb-20"

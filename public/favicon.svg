@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!--
+    Favicon: Same ascending-bars mark, filled with teal for browser-tab visibility.
+    Simplified for 16x16/32x32 pixel grids.
+  -->
+  <path d="M6 22h12l4-4H10L6 22Z" fill="#14b8a6"/>
+  <path d="M8 16h12l4-4H12L8 16Z" fill="#14b8a6"/>
+  <path d="M10 10h12l4-4H14l-4 4Z" fill="#14b8a6"/>
+</svg>

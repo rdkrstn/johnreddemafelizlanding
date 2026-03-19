@@ -5,9 +5,9 @@ import { Container } from "@/components/ui/container";
 import { GlassPanel } from "@/components/ui/glass-panel";
 
 const checkpoints = [
-  "Unified CRM & Sales Automation",
-  "Advanced Lead Attribution Models",
-  "Automated Client Onboarding Flows",
+  "Unified CRM that gives you one source of truth for every lead",
+  "Automated follow-up sequences that convert while you sleep",
+  "Attribution models so you know exactly what drives revenue",
 ] as const;
 
 export default function SolutionFrame() {
@@ -82,16 +82,16 @@ export default function SolutionFrame() {
 
             <ScrollReveal variant="slide-right" delay={0.1}>
               <h2 className="section-title">
-                Revenue Systems as a Product
+                Systems That Close Deals For You
               </h2>
             </ScrollReveal>
 
             <ScrollReveal variant="slide-right" delay={0.15}>
               <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
-                I don&apos;t just &ldquo;consult.&rdquo; I build the
-                infrastructure your revenue depends on. Every system is
-                engineered to capture, nurture, and convert &mdash; without
-                adding headcount or ad spend.
+                I don&apos;t advise from the sidelines. I build the actual
+                infrastructure your revenue depends on &mdash; CRM pipelines,
+                automated nurture sequences, and conversion funnels engineered
+                to capture, qualify, and close without adding headcount.
               </p>
             </ScrollReveal>
 
@@ -115,11 +115,11 @@ export default function SolutionFrame() {
 
             <ScrollReveal variant="slide-right" delay={0.3}>
               <a
-                href="/case-studies"
+                href="/book-a-call"
                 className="btn-primary"
-                aria-label="View the framework"
+                aria-label="Get your free systems audit"
               >
-                View The Framework &rarr;
+                Get Your Free Systems Audit &rarr;
               </a>
             </ScrollReveal>
           </div>

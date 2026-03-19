@@ -3,6 +3,7 @@ import { Space_Grotesk, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/animations/ScrollProgress";
+import StickyCTA from "@/components/StickyCTA";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
@@ -32,11 +33,11 @@ export const metadata: Metadata = {
     template: "%s | Johnred Demafeliz",
   },
   description:
-    "Revenue systems consultant for coaches, educators, and service founders. I build the conversion infrastructure that turns existing demand into closed revenue.",
+    "I build the CRM, automation, and funnel infrastructure that turns your existing traffic into closed deals. Revenue systems consulting for coaches, educators, and service founders.",
   openGraph: {
     title: "Johnred Demafeliz | Revenue Systems Consultant",
     description:
-      "Revenue systems consulting for founders who need infrastructure, not more ad spend.",
+      "CRM, automation, and funnel infrastructure for founders who are done leaving revenue on the table.",
     type: "website",
     siteName: "Johnred Demafeliz",
     url: "https://johnred.dev",
@@ -45,7 +46,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Johnred Demafeliz | Revenue Systems Consultant",
     description:
-      "Revenue systems consulting for founders who need infrastructure, not more ad spend.",
+      "CRM, automation, and funnel infrastructure for founders who are done leaving revenue on the table.",
+  },
+  icons: {
+    icon: "/favicon.svg",
   },
   robots: {
     index: true,
@@ -97,6 +101,7 @@ export default function RootLayout({
           }}
         />
         <ScrollProgress />
+        <StickyCTA />
         <SmoothScroll>
           {children}
         </SmoothScroll>
