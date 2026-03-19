@@ -2,8 +2,9 @@
 
 import { Container } from "@/components/ui/container";
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import CountUp from "@/components/animations/CountUp";
+
 import StaggerChildren from "@/components/animations/StaggerChildren";
+import { Terminal, Database, Layers } from "lucide-react";
 
 export default function FounderSection() {
   return (
@@ -25,10 +26,10 @@ export default function FounderSection() {
               {/* Floating badge */}
               <div className="absolute -bottom-6 -right-6 rounded-xl bg-accent-teal p-6 text-white shadow-xl">
                 <p className="mb-1 text-xs font-bold uppercase tracking-widest">
-                  Systems Built
+                  Approach
                 </p>
-                <p className="font-display text-4xl font-black">
-                  <CountUp end={250} suffix="+" />
+                <p className="font-display text-2xl font-black">
+                  Builder
                 </p>
               </div>
             </div>
@@ -41,85 +42,54 @@ export default function FounderSection() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <h2 className="section-title mb-10">Built for Founders Who Have Outgrown Duct Tape</h2>
+              <h2 className="section-title mb-10">I Build What Most Consultants Only Talk About</h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <div className="space-y-7">
                 <p className="font-sans text-lg leading-relaxed text-muted-foreground">
-                  Over the past decade, I have worked with coaches, educators,
-                  and service founders who all hit the same wall: product-market
-                  fit is there, the team is solid, but the backend is held
-                  together by spreadsheets and hope.
+                  Most consultants will give you a strategy deck and wish you
+                  luck. I am not that person. I am a systems architect who writes
+                  the code, wires the automations, and delivers working
+                  infrastructure you can use the same week.
                 </p>
                 <p className="font-sans text-lg leading-relaxed text-muted-foreground">
-                  I build the revenue infrastructure that removes that ceiling.
-                  CRM architecture, automated pipelines, and attribution systems
-                  &mdash; engineered with the same precision you would expect
-                  from a fintech team, but designed for founder-led businesses.
+                  My stack combines custom-built Next.js applications with
+                  GoHighLevel, Sanity CMS, and payment integrations like
+                  PayMongo &mdash; so you get the power of custom code with the
+                  speed of proven platforms. I adapt to your budget and needs,
+                  not the other way around.
                 </p>
                 <p className="font-sans text-lg leading-relaxed text-muted-foreground">
-                  250+ systems deployed. Clients across the Philippines,
-                  Australia, and the US. No quick hacks &mdash; only
-                  infrastructure built for your next phase of growth.
+                  I understand your world: workshops that sell through trust,
+                  high-ticket programs that close through relationships, and
+                  the network-based selling that makes your business unique.
+                  What you need is someone who builds the system behind all of
+                  it so you can focus on what you do best.
                 </p>
               </div>
             </ScrollReveal>
 
             {/* Tech icons */}
             <StaggerChildren staggerDelay={0.1} className="mt-12 flex gap-6">
-              {/* Terminal icon */}
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              <Terminal
+                size={32}
+                strokeWidth={1.5}
                 className="opacity-60 hover:opacity-100 hover:text-accent-teal transition-all duration-300"
                 aria-hidden="true"
-              >
-                <polyline points="4 17 10 11 4 5" />
-                <line x1="12" y1="19" x2="20" y2="19" />
-              </svg>
-
-              {/* Database icon */}
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              />
+              <Database
+                size={32}
+                strokeWidth={1.5}
                 className="opacity-60 hover:opacity-100 hover:text-accent-teal transition-all duration-300"
                 aria-hidden="true"
-              >
-                <ellipse cx="12" cy="5" rx="9" ry="3" />
-                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-              </svg>
-
-              {/* API / layers icon */}
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              />
+              <Layers
+                size={32}
+                strokeWidth={1.5}
                 className="opacity-60 hover:opacity-100 hover:text-accent-teal transition-all duration-300"
                 aria-hidden="true"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
+              />
             </StaggerChildren>
           </div>
         </div>

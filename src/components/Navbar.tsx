@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 import MagneticButton from "@/components/animations/MagneticButton";
 
 const NAV_LINKS = [
-  { label: "Systems", href: "/#solution" },
-  { label: "Case Studies", href: "/#results" },
-  { label: "Founder", href: "/#about" },
+  { label: "The Problem", href: "/#diagnosis" },
+  { label: "The Solution", href: "/#solution" },
+  { label: "About", href: "/#about" },
 ] as const;
 
 export default function Navbar() {
@@ -129,7 +129,7 @@ export default function Navbar() {
             href="/book-a-call"
             className="btn-primary text-xs"
           >
-            Free Audit
+            Book a Call
           </Link>
         </MagneticButton>
 
@@ -206,7 +206,7 @@ export default function Navbar() {
               className="btn-primary flex w-full justify-center text-xs"
               onClick={closeMobile}
             >
-              Free Audit
+              Book a Call
             </Link>
           </div>
         </div>

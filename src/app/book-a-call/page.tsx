@@ -6,11 +6,12 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 import TextReveal from "@/components/animations/TextReveal";
 import StaggerChildren from "@/components/animations/StaggerChildren";
 import { Container } from "@/components/ui/container";
+import { Clock, CheckCircle2, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Get Your Free Systems Audit",
+  title: "Book a Free Strategy Call",
   description:
-    "Book a free 15-minute systems audit with Johnred Demafeliz. Walk away with a clear action plan to fix the gaps costing you leads and revenue.",
+    "Book a free 30-minute strategy call with Johnred Demafeliz. Get a system blueprint for your workshop or high-ticket program — from ad click to enrollment.",
 };
 
 const CALENDLY_URL =
@@ -19,63 +20,19 @@ const CALENDLY_URL =
 
 const benefits = [
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-5 h-5"
-        aria-hidden="true"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
-    title: "15 minutes, zero fluff",
-    description: "A focused diagnostic of your current systems. We get straight to the gaps.",
+    icon: <Clock className="w-5 h-5" strokeWidth={1.5} aria-hidden="true" />,
+    title: "30-min deep architecture session",
+    description: "We will map your entire flow: ads, landing pages, workshop registration, follow-up, and enrollment.",
   },
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-5 h-5"
-        aria-hidden="true"
-      >
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-      </svg>
-    ),
-    title: "No pitch, no pressure",
-    description: "This is not a sales call. You will leave with value whether we work together or not.",
+    icon: <CheckCircle2 className="w-5 h-5" strokeWidth={1.5} aria-hidden="true" />,
+    title: "No pitch, pure strategy",
+    description: "This is a diagnostic, not a sales call. You will leave with a system blueprint whether we work together or not.",
   },
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-5 h-5"
-        aria-hidden="true"
-      >
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-      </svg>
-    ),
-    title: "Walk away with a plan",
-    description: "You will get your top 3 system gaps identified and a clear roadmap to fix them.",
+    icon: <Zap className="w-5 h-5" strokeWidth={1.5} aria-hidden="true" />,
+    title: "Immediate clarity",
+    description: "See exactly where leads are dropping off in your current process and what to build first.",
   },
 ];
 
@@ -96,13 +53,13 @@ export default function BookACallPage() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-teal opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-teal" />
                   </span>
-                  Limited spots this week
+                  3 spots per quarter
                 </span>
               </ScrollReveal>
 
               {/* Headline */}
               <TextReveal
-                text="Find the Gaps Costing You Revenue"
+                text="Let's Map Your Revenue System"
                 as="h1"
                 className="display-xl"
               />
@@ -110,9 +67,11 @@ export default function BookACallPage() {
               {/* Subtitle */}
               <ScrollReveal variant="fade" delay={0.2}>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-                  Pick a time below. In 15 minutes, I will diagnose the
-                  biggest leaks in your current systems and give you a clear
-                  action plan &mdash; whether we work together or not.
+                  You run workshops and high-ticket programs. Pick a time below
+                  and in 30 minutes I will map out the exact funnel
+                  infrastructure your business needs &mdash; from the ads
+                  driving traffic to the system that turns attendees into
+                  paying clients.
                 </p>
               </ScrollReveal>
 
@@ -138,16 +97,14 @@ export default function BookACallPage() {
                 ))}
               </StaggerChildren>
 
-              {/* Testimonial */}
+              {/* Promise */}
               <ScrollReveal variant="fade" delay={0.3}>
                 <div className="border-t border-border pt-8 mt-4">
-                  <p className="text-sm text-muted-foreground italic leading-relaxed">
-                    &ldquo;Johnred found three revenue leaks in our funnel during
-                    a single call. We fixed them that week and saw a 40% lift in
-                    closes the following month.&rdquo;
-                  </p>
-                  <p className="mt-3 text-sm font-bold text-foreground">
-                    &mdash; David L., EdTech CEO
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    I take on 3 builds per quarter to ensure every client gets
+                    my full attention. This call is free, no obligation, and you
+                    will walk away with a clear picture of what your system
+                    should look like.
                   </p>
                 </div>
               </ScrollReveal>

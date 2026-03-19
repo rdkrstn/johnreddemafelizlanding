@@ -49,7 +49,7 @@ export default function StickyCTA() {
             href="/book-a-call"
             className="btn-accent flex-1 text-center text-xs py-3"
           >
-            Get Your Free Systems Audit
+            Book a Free Strategy Call
           </Link>
           <button
             type="button"

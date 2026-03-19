@@ -29,24 +29,24 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://johnred.dev"),
   title: {
-    default: "Johnred Demafeliz | Revenue Systems Consultant",
+    default: "Johnred Demafeliz | Revenue Systems Architect",
     template: "%s | Johnred Demafeliz",
   },
   description:
-    "I build the CRM, automation, and funnel infrastructure that turns your existing traffic into closed deals. Revenue systems consulting for coaches, educators, and service founders.",
+    "I build custom funnel infrastructure for workshop leaders and high-ticket program owners. From ad click to program enrollment — automated lead capture, follow-up sequences, and real-time dashboards.",
   openGraph: {
-    title: "Johnred Demafeliz | Revenue Systems Consultant",
+    title: "Johnred Demafeliz | Revenue Systems Architect",
     description:
-      "CRM, automation, and funnel infrastructure for founders who are done leaving revenue on the table.",
+      "Custom funnel infrastructure for workshop leaders and high-ticket program owners. Automated lead capture, follow-up, and enrollment systems.",
     type: "website",
     siteName: "Johnred Demafeliz",
     url: "https://johnred.dev",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Johnred Demafeliz | Revenue Systems Consultant",
+    title: "Johnred Demafeliz | Revenue Systems Architect",
     description:
-      "CRM, automation, and funnel infrastructure for founders who are done leaving revenue on the table.",
+      "Custom funnel infrastructure for workshop leaders and high-ticket program owners. Automated lead capture, follow-up, and enrollment systems.",
   },
   icons: {
     icon: "/favicon.svg",
@@ -84,11 +84,11 @@ export default function RootLayout({
                   name: "Johnred Demafeliz",
                   url: "https://johnred.dev",
                   description:
-                    "Revenue systems consultant for coaches, educators, and service founders.",
+                    "Revenue systems architect building custom funnel infrastructure for workshop leaders and high-ticket program owners.",
                   founder: {
                     "@type": "Person",
                     name: "Johnred Demafeliz",
-                    jobTitle: "Revenue Systems Consultant",
+                    jobTitle: "Revenue Systems Architect",
                   },
                 },
                 {

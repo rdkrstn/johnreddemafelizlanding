@@ -3,11 +3,12 @@
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Container } from "@/components/ui/container";
 import { GlassPanel } from "@/components/ui/glass-panel";
+import { LayoutGrid, CircleCheckBig } from "lucide-react";
 
 const checkpoints = [
-  "Unified CRM that gives you one source of truth for every lead",
-  "Automated follow-up sequences that convert while you sleep",
-  "Attribution models so you know exactly what drives revenue",
+  "Automated lead capture from every ad and landing page",
+  "Smart follow-up sequences that nurture workshop attendees into buyers",
+  "Real-time dashboard showing exactly which ads drive enrollments",
 ] as const;
 
 export default function SolutionFrame() {
@@ -47,25 +48,10 @@ export default function SolutionFrame() {
                 >
                   {/* Revenue Architecture icon */}
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent-teal/20">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#14b8a6"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <rect x="3" y="3" width="7" height="7" />
-                      <rect x="14" y="3" width="7" height="7" />
-                      <rect x="3" y="14" width="7" height="7" />
-                      <rect x="14" y="14" width="7" height="7" />
-                    </svg>
+                    <LayoutGrid size={24} strokeWidth={2} className="text-accent-teal" aria-hidden="true" />
                   </div>
                   <span className="font-mono text-xs font-bold uppercase tracking-widest text-white/90">
-                    Revenue Architecture
+                    Funnel Architecture
                   </span>
                 </GlassPanel>
               </div>
@@ -82,16 +68,18 @@ export default function SolutionFrame() {
 
             <ScrollReveal variant="slide-right" delay={0.1}>
               <h2 className="section-title">
-                Systems That Close Deals For You
+                The System Behind Full Programs
               </h2>
             </ScrollReveal>
 
             <ScrollReveal variant="slide-right" delay={0.15}>
               <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
-                I don&apos;t advise from the sidelines. I build the actual
-                infrastructure your revenue depends on &mdash; CRM pipelines,
-                automated nurture sequences, and conversion funnels engineered
-                to capture, qualify, and close without adding headcount.
+                Your flow should work like this: ad click &rarr; landing page
+                &rarr; workshop registration &rarr; automated follow-up &rarr;
+                program enrollment. I build the actual infrastructure that makes
+                this happen &mdash; from CRM pipelines to nurture sequences to
+                payment integration. No advice from the sidelines. Just working
+                systems.
               </p>
             </ScrollReveal>
 
@@ -99,14 +87,7 @@ export default function SolutionFrame() {
               <div className="mb-10 flex flex-col space-y-5">
                 {checkpoints.map((point) => (
                   <div key={point} className="flex items-start gap-3">
-                    <svg
-                      className="mt-0.5 h-5 w-5 shrink-0 text-accent-teal"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                    </svg>
+                    <CircleCheckBig className="mt-0.5 h-5 w-5 shrink-0 text-accent-teal" aria-hidden="true" />
                     <p className="text-base font-medium text-foreground">{point}</p>
                   </div>
                 ))}
@@ -117,9 +98,9 @@ export default function SolutionFrame() {
               <a
                 href="/book-a-call"
                 className="btn-primary"
-                aria-label="Get your free systems audit"
+                aria-label="Book a free strategy call"
               >
-                Get Your Free Systems Audit &rarr;
+                Book a Free Strategy Call &rarr;
               </a>
             </ScrollReveal>
           </div>

@@ -7,6 +7,7 @@ import CountUp from "@/components/animations/CountUp";
 import StaggerChildren from "@/components/animations/StaggerChildren";
 import TextReveal from "@/components/animations/TextReveal";
 import { Container } from "@/components/ui/container";
+import { Star } from "lucide-react";
 import {
   sanityClient,
   isSanityConfigured,
@@ -40,16 +41,12 @@ async function getTestimonials(): Promise<Testimonial[]> {
 
 function StarIcon({ className = "" }: { className?: string }) {
   return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
+    <Star
+      size={18}
       fill="currentColor"
       className={className}
       aria-hidden="true"
-    >
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-    </svg>
+    />
   );
 }
 

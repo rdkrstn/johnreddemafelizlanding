@@ -27,31 +27,31 @@ export default function FinalCTA() {
             {/* Content */}
             <div className="relative z-10 mx-auto max-w-2xl">
               <TextReveal
-                text="Stop leaving revenue on the table."
+                text="Your next cohort is waiting. Let's make sure they find you."
                 as="h2"
                 className="display-xl text-white mb-12"
               />
 
               <ScrollReveal variant="fade" delay={0.3}>
                 <p className="mb-12 text-lg leading-relaxed text-slate-300 md:text-xl">
-                  In 15 minutes, I will identify the top 3 gaps in your current
-                  systems and map out exactly how to fix them. No pitch, no
-                  filler &mdash; just a clear action plan you can use
-                  immediately.
+                  In 30 minutes, I will map out the exact system your business
+                  needs &mdash; from ad click to program enrollment. No pitch,
+                  just architecture. You will leave with a clear blueprint
+                  whether we work together or not.
                 </p>
               </ScrollReveal>
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <MagneticButton>
                   <Link href="/book-a-call" className="btn-accent">
-                    Get Your Free Systems Audit &rarr;
+                    Book Your Free Strategy Call &rarr;
                   </Link>
                 </MagneticButton>
               </div>
 
               <ScrollReveal variant="fade" delay={0.5}>
                 <p className="mt-6 text-sm text-slate-400">
-                  Free. No obligation. Limited spots each week.
+                  I take on 3 builds per quarter. Let&apos;s see if yours is next.
                 </p>
               </ScrollReveal>
             </div>

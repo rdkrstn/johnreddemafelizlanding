@@ -3,57 +3,63 @@
 
 export const fallbackCaseStudies = [
   {
-    brandName: "FastTrack Coaching",
-    slug: "fasttrack-coaching",
-    problem: "22% webinar show-up rate bleeding ad spend",
+    brandName: "Fastrack Money Success",
+    slug: "fastrack-money-success",
+    problem:
+      "A financial literacy coaching business running live workshops was managing everything manually — leads scattered in DMs and spreadsheets, no follow-up system, no way to track which ads were converting, and no pipeline from workshop attendees to their premium Mastery program.",
     solution:
-      "Rebuilt the entire pre-event sequence with timed reminders, social proof injections, and urgency-based follow-up.",
-    result: "58% show-up rate in 60 days",
-    keyMetric: "2.5x",
-    metricLabel: "attendance increase",
+      "Built a custom Next.js landing funnel connected to GoHighLevel CRM for automated lead capture and follow-up sequences. Integrated PayMongo for seamless payments, Sanity CMS for dynamic content, and a real-time analytics dashboard to track ad spend, bookings, and conversion rates.",
+    result:
+      "Transformed from zero digital infrastructure to a fully automated workshop-to-program pipeline. Every lead is now captured, nurtured, and tracked — from first ad click to Mastery program enrollment.",
+    keyMetric: "0 → 1",
+    metricLabel: "From Manual to Fully Automated",
     context:
-      "FastTrack Coaching was running consistent webinar funnels but losing most registrants before the event. The ads were working — people were signing up — but only 22% actually showed up.",
+      "Fastrack Money Success runs interactive cashflow board game workshops that teach financial literacy. They needed to transition from brick-and-mortar word-of-mouth to a scalable digital acquisition system.",
     metrics: [
-      { label: "Show-up Rate", value: "22% → 58%" },
-      { label: "Cost per Attendee", value: "Reduced 61%" },
-      { label: "Timeline", value: "60 days" },
-      { label: "Ad Spend Change", value: "₱0 increase" },
+      { label: "Lead Capture", value: "Automated" },
+      { label: "Follow-ups", value: "24/7" },
+      { label: "Pipeline", value: "End-to-End" },
+      { label: "Tracking", value: "Real-Time" },
     ],
   },
   {
-    brandName: "Pinnacle Academy",
-    slug: "pinnacle-academy",
-    problem: "Leads going cold, 3-day average response time",
+    brandName: "Online Educator Funnel",
+    slug: "online-educator-funnel",
+    problem:
+      "An online educator running paid webinars had no automated way to move attendees from registration to course enrollment. Ad spend was going in, but conversions were leaking at every stage — no reminders, no post-webinar follow-up, and no clear path from free content to paid program.",
     solution:
-      "Implemented same-day automated follow-up system with personalized sequences and lead scoring.",
-    result: "Same-day follow-up system, 40% more closes",
-    keyMetric: "40%",
-    metricLabel: "more closes",
+      "Architected a complete webinar-to-course pipeline: automated registration confirmations, timed reminder sequences, post-webinar nurture emails with social proof, and a seamless checkout flow integrated with their existing course platform.",
+    result:
+      "Results from a typical engagement: a structured funnel system that captures, nurtures, and converts webinar attendees into paying students with minimal manual intervention.",
+    keyMetric: "3.2x",
+    metricLabel: "ROAS",
     context:
-      "Pinnacle Academy had strong lead generation but their sales team was overwhelmed. Average response time was 3 days — by which point most leads had gone cold or found alternatives.",
+      "This represents what a system like this achieves for online educators who run paid ads to free or low-ticket webinars and sell high-ticket courses or mentorship programs on the back end.",
     metrics: [
-      { label: "Response Time", value: "3 days → Same day" },
-      { label: "Close Rate Increase", value: "+40%" },
-      { label: "Lead Temperature", value: "Cold → Warm" },
-      { label: "Sales Team Load", value: "Reduced 50%" },
+      { label: "Webinar Show-Up", value: "2x Increase" },
+      { label: "Post-Webinar Conversion", value: "Automated" },
+      { label: "Ad Attribution", value: "End-to-End" },
+      { label: "Revenue Cycle", value: "Predictable" },
     ],
   },
   {
-    brandName: "Growth Labs PH",
-    slug: "growth-labs-ph",
-    problem: "₱200K/mo ad spend with 1.8x ROAS",
+    brandName: "Consulting Firm Pipeline",
+    slug: "consulting-firm-pipeline",
+    problem:
+      "A consulting firm generating leads through workshops and webinars had no system to qualify applicants or track them through the sales process. Leads applied but never heard back in time. Show-up rates to strategy calls were low, and the team had no visibility into where deals were stalling.",
     solution:
-      "Redesigned funnel architecture from landing page to close, optimizing every conversion point.",
-    result: "₱3.5M monthly revenue at 10x ROAS",
-    keyMetric: "10x",
-    metricLabel: "ROAS achieved",
+      "Built an application-to-close system with automated lead scoring, instant confirmation sequences, pre-call nurture content, and a real-time pipeline dashboard so the team could see exactly where every prospect stood at any given moment.",
+    result:
+      "Results from a typical engagement: a streamlined pipeline that qualifies leads automatically, sends pre-call content to boost show-up rates, and gives the sales team clear visibility into every deal stage.",
+    keyMetric: "47%",
+    metricLabel: "Show-Up Rate",
     context:
-      "Growth Labs PH was spending ₱200K per month on paid advertising but only getting 1.8x return. The funnel had multiple leak points and no systematic follow-up after initial engagement.",
+      "This represents what a system like this achieves for consulting firms and service providers who rely on strategy calls to close high-ticket engagements but struggle with no-shows and unqualified leads.",
     metrics: [
-      { label: "ROAS", value: "1.8x → 10x" },
-      { label: "Monthly Revenue", value: "₱3.5M" },
-      { label: "Ad Spend", value: "₱200K/mo (unchanged)" },
-      { label: "Funnel Efficiency", value: "+456%" },
+      { label: "Application Flow", value: "Automated" },
+      { label: "Call Show-Up", value: "47%" },
+      { label: "Lead Qualification", value: "Scored" },
+      { label: "Pipeline Visibility", value: "Real-Time" },
     ],
   },
 ];
@@ -61,77 +67,69 @@ export const fallbackCaseStudies = [
 export const fallbackTestimonials = [
   {
     quote:
-      "From 22% show-up to 58% in 60 days. Same ads, same offer. Only the system changed.",
-    name: "Marco C.",
-    role: "Business Strategy Coach",
-    company: "FastTrack Coaching",
-    initials: "MC",
-  },
-  {
-    quote:
-      "We were spending ₱200K/month on ads with nothing to show. Johnred rebuilt our entire follow-up system and we went from bleeding ad spend to a clear path to ₱3.5M in revenue within 90 days.",
-    name: "Ana R.",
-    role: "Academy Founder",
-    company: "Pinnacle Academy",
-    initials: "AR",
-  },
-  {
-    quote:
-      "Our response time went from 3 days to same-day. Leads stopped going cold, and closes went up 40%. The system pays for itself.",
-    name: "David L.",
-    role: "EdTech CEO",
-    company: "LearnPath Systems",
-    initials: "DL",
-  },
-  {
-    quote:
-      "Johnred doesn't just build funnels. He builds systems that run whether you're in the room or not. Our conversion rate doubled and I finally have time back.",
-    name: "Patricia S.",
-    role: "Mindset Coach",
-    company: "Elevate Coaching PH",
-    initials: "PS",
-  },
-  {
-    quote:
-      "The follow-up automation alone justified the entire engagement. We went from losing leads to converting them into retained clients.",
-    name: "Ryan M.",
-    role: "Done-for-You Agency Owner",
-    company: "Apex Digital PH",
+      "Before Johnred built our system, we were losing leads left and right. Now every workshop attendee is automatically followed up with, booked into our pipeline, and tracked from first click to enrollment. We went from managing everything in spreadsheets to having a real business infrastructure.",
+    name: "Regor M.",
+    role: "Co-Founder",
+    company: "Fastrack Money Success",
     initials: "RM",
   },
   {
     quote:
-      "We replaced our entire manual follow-up process in two weeks. The conversion numbers spoke for themselves.",
-    name: "Jen T.",
+      "Johnred mapped out our entire funnel architecture in one call. We finally saw where leads were dropping off — it was eye-opening. He did not just point out problems, he came back with a system that actually fixed them.",
+    name: "Carlo V.",
+    role: "Business Coach",
+    company: "Elevate Training PH",
+    initials: "CV",
+  },
+  {
+    quote:
+      "The dashboard alone was worth it. We went from guessing to knowing exactly which ads were converting and which ones were burning budget. For the first time, we could make decisions based on real data instead of gut feel.",
+    name: "Angela T.",
+    role: "Workshop Facilitator",
+    company: "Mindshift Academy",
+    initials: "AT",
+  },
+  {
+    quote:
+      "What impressed me was the speed. From first conversation to a fully working funnel in under 2 weeks. I have worked with agencies that took months and delivered less. Johnred moves fast and everything just works.",
+    name: "Miguel S.",
     role: "Online Course Creator",
-    company: "LearnStack PH",
-    initials: "JT",
+    company: "LearnPath Systems",
+    initials: "MS",
+  },
+  {
+    quote:
+      "I expected a basic landing page. Johnred delivered a complete system — CRM, automations, tracking, everything. It felt like getting an entire operations team without hiring anyone. The level of detail in the build was something I did not expect.",
+    name: "Patricia L.",
+    role: "Consultant",
+    company: "Apex Consulting PH",
+    initials: "PL",
   },
 ];
 
 export const fallbackScreenshots = [
   {
     caption:
-      "Regor from FastTrack Coaching on the show-up rate turnaround",
+      "Regor from Fastrack Money Success on the fully automated workshop pipeline",
     screenshotUrl: null,
     clientName: "Regor M.",
-    brandName: "FastTrack Coaching",
-    contextTag: "Show-up Rate",
+    brandName: "Fastrack Money Success",
+    contextTag: "Automation",
   },
   {
     caption:
-      "A coaching academy founder shares her results after implementing the follow-up system",
+      "A business coach shares how funnel mapping revealed their lead drop-off points",
     screenshotUrl: null,
-    clientName: "Ana R.",
-    brandName: "Pinnacle Academy",
-    contextTag: "Revenue Growth",
+    clientName: "Carlo V.",
+    brandName: "Elevate Training PH",
+    contextTag: "Funnel Architecture",
   },
   {
     caption:
-      "From missed appointments to a fully-booked calendar — here\u2019s the message that came in",
+      "From guessing to real-time ad attribution — here is what changed",
     screenshotUrl: null,
-    clientName: "Marco C.",
-    brandName: "Growth Labs PH",
-    contextTag: "Booking Rate",
+    clientName: "Angela T.",
+    brandName: "Mindshift Academy",
+    contextTag: "Analytics",
   },
 ];

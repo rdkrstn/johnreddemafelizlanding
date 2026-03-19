@@ -4,80 +4,30 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 import StaggerChildren from "@/components/animations/StaggerChildren";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Container } from "@/components/ui/container";
+import { Droplets, Clock, LayoutDashboard } from "lucide-react";
 
 const problems = [
   {
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M12 2v6l3-3" />
-        <path d="M12 8l-3-3" />
-        <path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0z" />
-        <path d="M12 12v4" />
-        <circle cx="12" cy="20" r="0.5" />
-      </svg>
-    ),
-    title: "Leaking Funnels",
+    icon: <Droplets size={40} strokeWidth={1.5} aria-hidden="true" />,
+    title: "Lost Leads After Workshops",
     description:
-      "You paid to get that lead. Then your follow-up sequence dropped the ball, and they booked with someone else. This is happening every single day.",
+      "Your workshop was fire. But half the attendees never heard from you again. No follow-up sequence, no nurture emails, no next step. They were interested -- and then they forgot.",
     accentColor: "border-t-red-500",
     iconColor: "text-red-500",
   },
   {
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
-    title: "Manual Bottlenecks",
+    icon: <Clock size={40} strokeWidth={1.5} aria-hidden="true" />,
+    title: "Manual Everything",
     description:
-      "Your team spends 10+ hours a week on tasks a system could handle in seconds. That is not hustle -- it is infrastructure debt, and it compounds.",
+      "You are spending hours on spreadsheets, DMs, and manual follow-ups instead of coaching your clients. Every hour you spend managing leads is an hour you are not delivering your program.",
     accentColor: "border-t-orange-500",
     iconColor: "text-orange-500",
   },
   {
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
-        <path d="M7 8h2m2 0h2m2 0h2" />
-        <path d="M7 11h10" />
-      </svg>
-    ),
-    title: "Fragmented Data",
+    icon: <LayoutDashboard size={40} strokeWidth={1.5} aria-hidden="true" />,
+    title: "No Visibility on Ad Spend",
     description:
-      "Your leads live in spreadsheets, your pipeline lives in your head, and nobody can tell you which channel actually drives revenue. You are flying blind.",
+      "You cannot tell which ads are actually filling your programs. Your leads live in spreadsheets, your pipeline lives in your head, and you are guessing where your ad budget should go.",
     accentColor: "border-t-yellow-500",
     iconColor: "text-yellow-500",
   },
@@ -91,7 +41,7 @@ export default function ProblemFrame() {
         <ScrollReveal variant="fade">
           <SectionHeader
             label="The Diagnosis"
-            title="You're Losing Revenue to Systems You've Outgrown"
+            title="Your Workshops Work. Your Backend Doesn't."
             align="center"
             titleClassName="text-balance"
             className="mb-20"

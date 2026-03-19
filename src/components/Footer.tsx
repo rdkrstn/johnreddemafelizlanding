@@ -5,9 +5,9 @@ import { Container } from "@/components/ui/container";
 
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "Free Systems Audit", href: "/book-a-call" },
+  { label: "The Solution", href: "/#solution" },
+  { label: "About", href: "/#about" },
+  { label: "Book a Call", href: "/book-a-call" },
 ] as const;
 
 const CONNECT_LINKS = [
@@ -53,8 +53,9 @@ export default function Footer() {
               </span>
             </div>
             <p className="mb-6 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              CRM, automation, and funnel infrastructure for coaches, educators,
-              and service founders who are done leaving revenue on the table.
+              Funnel infrastructure for workshop leaders, educators, and
+              high-ticket program owners who need systems that convert
+              attendees into clients.
             </p>
             <p className="text-xs text-muted-foreground">
               &copy; {new Date().getFullYear()} Johnred Demafeliz. All rights

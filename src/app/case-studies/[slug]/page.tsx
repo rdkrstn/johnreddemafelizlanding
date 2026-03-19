@@ -211,7 +211,7 @@ export default async function CaseStudyDetail({
                 Similar problem? Let&apos;s diagnose it.
               </h3>
               <p className="text-[14px] text-white/60 mb-6">
-                Book a 15-minute diagnostic and I&apos;ll identify the top gaps
+                Book a 30-minute strategy session and I&apos;ll identify the top gaps
                 in your current system.
               </p>
               <Link href="/book-a-call" className="btn-accent">

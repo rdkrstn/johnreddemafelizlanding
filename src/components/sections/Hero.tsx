@@ -34,13 +34,13 @@ export default function Hero() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-teal opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-teal" />
                 </span>
-                Currently accepting engagements
+                Accepting 3 new builds this quarter
               </span>
             </ScrollReveal>
 
             {/* Headline */}
             <TextReveal
-              text="Your leads are leaking. Your revenue should not be."
+              text="You fill rooms. Your funnel should fill your pipeline."
               as="h1"
               className="display-2xl text-primary mb-6"
               delay={0.1}
@@ -53,9 +53,10 @@ export default function Hero() {
             {/* Subtitle */}
             <ScrollReveal variant="fade" delay={0.3}>
               <p className="font-sans text-xl text-slate-600 max-w-lg leading-relaxed mb-10">
-                I build the CRM, automation, and funnel infrastructure that
-                turns your existing traffic into closed deals — without adding
-                headcount or ad spend.
+                You run workshops, webinars, and high-ticket programs. I build
+                the funnel infrastructure that captures every lead from your
+                ads and turns attendees into paying enrollees &mdash;
+                automatically.
               </p>
             </ScrollReveal>
 
@@ -68,15 +69,15 @@ export default function Hero() {
                     className="btn-primary"
                     aria-label="Book a strategy call"
                   >
-                    Get Your Free Systems Audit &rarr;
+                    Book a Free Strategy Call &rarr;
                   </Link>
                 </MagneticButton>
                 <Link
-                  href="/#results"
+                  href="/#solution"
                   className="btn-secondary"
-                  aria-label="View case studies"
+                  aria-label="See how it works"
                 >
-                  View Case Studies
+                  See How It Works
                 </Link>
               </div>
             </ScrollReveal>
@@ -87,26 +88,25 @@ export default function Hero() {
             <StaggerChildren staggerDelay={0.12} className="grid grid-cols-2 gap-5">
               {/* Column 1 - offset down */}
               <div className="flex flex-col gap-5 mt-10">
-                {/* Card 1: Lead Conversion */}
+                {/* Card 1: Lead Capture */}
                 <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-8 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
                   <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-3">
-                    Lead Conversion
+                    Lead Capture
                   </p>
                   <CountUp
-                    end={42}
-                    prefix="+"
+                    end={100}
                     suffix="%"
                     className="font-display text-4xl font-black text-primary"
                   />
                 </div>
 
-                {/* Card 3: Admin Time */}
+                {/* Card 3: Manual Work */}
                 <div className="bg-accent-teal text-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
                   <p className="text-white/80 text-xs uppercase font-bold tracking-widest mb-3">
-                    Admin Time
+                    Manual Work
                   </p>
                   <CountUp
-                    end={60}
+                    end={80}
                     prefix="-"
                     suffix="%"
                     className="font-display text-4xl font-black text-white"
@@ -116,28 +116,20 @@ export default function Hero() {
 
               {/* Column 2 */}
               <div className="flex flex-col gap-5">
-                {/* Card 2: ROI Tracking */}
+                {/* Card 2: Ad Tracking */}
                 <div className="bg-primary text-white rounded-xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                   <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-3">
-                    ROI Tracking
+                    Ad Visibility
                   </p>
-                  <CountUp
-                    end={100}
-                    suffix="%"
-                    className="font-display text-4xl font-black"
-                  />
+                  <span className="font-display text-4xl font-black">Full</span>
                 </div>
 
-                {/* Card 4: Pipeline Velocity */}
+                {/* Card 4: Follow-up */}
                 <div className="bg-white border border-accent-teal/20 rounded-xl shadow-sm p-8 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 hover:border-accent-teal/40">
                   <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-3">
-                    Pipeline Velocity
+                    Follow-Up
                   </p>
-                  <CountUp
-                    end={3}
-                    suffix="x"
-                    className="font-display text-4xl font-black text-accent-teal"
-                  />
+                  <span className="font-display text-4xl font-black text-accent-teal">Auto</span>
                 </div>
               </div>
             </StaggerChildren>
