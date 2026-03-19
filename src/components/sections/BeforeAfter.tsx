@@ -4,6 +4,8 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Container } from "@/components/ui/container";
 import { X, XCircle, CheckCircle2, CircleCheckBig } from "lucide-react";
+import BeforeDiagram from "@/components/diagrams/BeforeDiagram";
+import AfterDiagram from "@/components/diagrams/AfterDiagram";
 
 const painPoints = [
   "Leads tracked in spreadsheets and DMs",
@@ -70,12 +72,8 @@ export default function BeforeAfter() {
                 ))}
               </ul>
 
-              {/* Placeholder Screenshot */}
-              <div className="bg-slate-100 rounded-xl aspect-video border-2 border-dashed border-red-300/50 flex items-center justify-center">
-                <span className="text-slate-400 text-sm font-medium">
-                  Your current setup
-                </span>
-              </div>
+              {/* Before Diagram */}
+              <BeforeDiagram />
             </div>
           </ScrollReveal>
 
@@ -112,12 +110,8 @@ export default function BeforeAfter() {
                 ))}
               </ul>
 
-              {/* Placeholder Screenshot */}
-              <div className="bg-teal-50 rounded-xl aspect-video border-2 border-dashed border-teal-300/50 flex items-center justify-center">
-                <span className="text-teal-500/70 text-sm font-medium">
-                  Your system after we build
-                </span>
-              </div>
+              {/* After Diagram */}
+              <AfterDiagram />
             </div>
           </ScrollReveal>
         </div>
