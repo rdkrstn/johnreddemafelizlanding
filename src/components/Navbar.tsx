@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 import MagneticButton from "@/components/animations/MagneticButton";
 
 const NAV_LINKS = [
-  { label: "The Problem", href: "/#diagnosis" },
-  { label: "The Solution", href: "/#solution" },
+  { label: "How It Works", href: "/#process" },
+  { label: "Services", href: "/#services" },
   { label: "About", href: "/#about" },
 ] as const;
 

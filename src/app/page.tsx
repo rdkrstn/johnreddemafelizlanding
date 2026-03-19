@@ -3,10 +3,15 @@ import Hero from "@/components/sections/Hero";
 import ProofStrip from "@/components/sections/ProofStrip";
 import ProblemFrame from "@/components/sections/ProblemFrame";
 import SolutionFrame from "@/components/sections/SolutionFrame";
+import BeforeAfter from "@/components/sections/BeforeAfter";
+import Process from "@/components/sections/Process";
+import Services from "@/components/sections/Services";
 import CaseStudyPreview from "@/components/sections/CaseStudyPreview";
 import Testimonials from "@/components/sections/Testimonials";
 import ScreenshotProof from "@/components/sections/ScreenshotProof";
+import TechStack from "@/components/sections/TechStack";
 import FounderSection from "@/components/sections/FounderSection";
+import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/Footer";
 import { sanityClient, isSanityConfigured, queries } from "@/utils/sanityClient";
@@ -54,10 +59,15 @@ export default async function Home() {
       <ProofStrip />
       <ProblemFrame />
       <SolutionFrame />
+      <BeforeAfter />
+      <Process />
+      <Services />
       <CaseStudyPreview data={caseStudies} />
       <Testimonials data={testimonials} />
       <ScreenshotProof />
+      <TechStack />
       <FounderSection />
+      <FAQ />
       <FinalCTA />
       </main>
       <Footer />
