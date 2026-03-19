@@ -1,7 +1,9 @@
 "use client";
 
-import FadeIn from "@/components/animations/FadeIn";
 import Link from "next/link";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import { Container } from "@/components/ui/container";
+import { cn } from "@/lib/utils";
 
 interface Testimonial {
   quote: string;
@@ -34,10 +36,20 @@ export default function Testimonials({ data }: TestimonialsProps) {
   if (!featured) return null;
 
   return (
-    <section className="py-28 sm:py-32 md:py-40" aria-label="Featured testimonial">
-      <div className="mx-auto max-w-7xl px-6">
-        <FadeIn>
-          <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-16 shadow-sm">
+    <section
+      className="py-24 md:py-32 lg:py-40"
+      aria-label="Featured testimonial"
+    >
+      <Container>
+        <ScrollReveal variant="scale">
+          <div
+            className={cn(
+              "relative overflow-hidden rounded-2xl",
+              "border border-slate-200 bg-white",
+              "p-10 sm:p-14 md:p-16",
+              "shadow-[var(--shadow-card)]"
+            )}
+          >
             {/* Giant quote icon - top right */}
             <div
               className="pointer-events-none absolute -top-4 right-8 select-none font-display leading-none text-primary opacity-5"
@@ -58,48 +70,57 @@ export default function Testimonials({ data }: TestimonialsProps) {
 
               {/* Quote */}
               <blockquote>
-                <p className="mb-10 text-3xl font-medium italic leading-relaxed text-slate-700 md:text-4xl">
+                <p className="mb-10 text-2xl font-medium italic leading-relaxed text-slate-700 sm:text-3xl md:text-4xl">
                   &ldquo;{featured.quote}&rdquo;
                 </p>
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                {/* Avatar circle */}
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-slate-200 text-sm font-bold text-primary">
-                  {featured.initials}
+                {/* Avatar circle with gradient ring */}
+                <div className="rounded-full ring-2 ring-accent-teal/30 ring-offset-2 ring-offset-white">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-slate-200 text-sm font-bold text-primary">
+                    {featured.initials}
+                  </div>
                 </div>
                 <div>
                   <p className="font-bold text-primary">
                     {featured.name}
                   </p>
-                  <p className="text-xs font-medium uppercase tracking-widest text-slate-500">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
                     {featured.role}
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </FadeIn>
+        </ScrollReveal>
 
         {/* Bottom links */}
-        <FadeIn delay={0.2}>
-          <div className="mt-10 flex items-center justify-between">
+        <ScrollReveal variant="fade" delay={0.2}>
+          <div className="mt-10 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/testimonials"
-              className="font-sans text-sm font-medium text-accent-teal transition-colors hover:text-accent-cyan"
+              className="group/link inline-flex items-center gap-2 font-sans text-sm font-medium text-accent-teal transition-colors duration-300 hover:text-accent-cyan"
             >
-              See All Testimonials <span aria-hidden="true">&rarr;</span>
+              See All Testimonials
+              <span
+                className="inline-block transition-transform duration-300 group-hover/link:translate-x-1"
+                aria-hidden="true"
+              >
+                &rarr;
+              </span>
             </Link>
             <Link
               href="/book-a-call"
-              className="inline-block rounded bg-primary px-8 py-4 text-sm font-bold text-white transition-colors hover:bg-accent-teal"
+              className="btn-primary"
             >
-              Book a Strategy Call <span aria-hidden="true">&rarr;</span>
+              Book a Strategy Call
+              <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
-        </FadeIn>
-      </div>
+        </ScrollReveal>
+      </Container>
     </section>
   );
 }

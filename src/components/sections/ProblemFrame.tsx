@@ -1,6 +1,9 @@
 "use client";
 
-import FadeIn from "@/components/animations/FadeIn";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import StaggerChildren from "@/components/animations/StaggerChildren";
+import { SectionHeader } from "@/components/ui/section-header";
+import { Container } from "@/components/ui/container";
 
 const problems = [
   {
@@ -82,49 +85,47 @@ const problems = [
 
 export default function ProblemFrame() {
   return (
-    <section aria-label="The Diagnosis" className="py-28 sm:py-32 md:py-40 bg-slate-50">
-      <div className="mx-auto max-w-7xl px-6">
+    <section aria-label="The Diagnosis" className="py-24 md:py-32 lg:py-40 bg-secondary">
+      <Container>
         {/* Centered heading */}
-        <div className="text-center mb-20">
-          <FadeIn>
-            <p className="section-label">
-              The Diagnosis
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.1}>
-            <h2 className="section-title text-balance">
-              The High Cost of Broken Systems
-            </h2>
-          </FadeIn>
-        </div>
+        <ScrollReveal variant="fade">
+          <SectionHeader
+            label="The Diagnosis"
+            title="The High Cost of Broken Systems"
+            align="center"
+            titleClassName="text-balance"
+            className="mb-20"
+          />
+        </ScrollReveal>
 
         {/* 3-column card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {problems.map((problem, index) => (
-            <FadeIn key={problem.title} delay={0.2 + index * 0.1}>
-              <div
-                className={`p-10 bg-white border border-slate-200 rounded shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 ${problem.accentColor}`}
-              >
-                {/* Icon */}
-                <div className={`${problem.iconColor} mb-8`}>
-                  {problem.icon}
-                </div>
-
-                {/* Title */}
-                <h3 className="font-display text-xl font-bold mb-5 text-primary">
-                  {problem.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-slate-600 text-base leading-relaxed">
-                  {problem.description}
-                </p>
+        <StaggerChildren
+          staggerDelay={0.12}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          {problems.map((problem) => (
+            <div
+              key={problem.title}
+              className={`group p-10 bg-card border border-border rounded-xl shadow-(--shadow-card) hover:-translate-y-1 hover:shadow-(--shadow-elevated) transition-all duration-300 border-t-4 ${problem.accentColor}`}
+            >
+              {/* Icon */}
+              <div className={`${problem.iconColor} mb-8 transition-transform duration-300 group-hover:scale-110`}>
+                {problem.icon}
               </div>
-            </FadeIn>
+
+              {/* Title */}
+              <h3 className="font-display text-xl font-bold mb-5 text-foreground">
+                {problem.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-muted-foreground text-base leading-relaxed">
+                {problem.description}
+              </p>
+            </div>
           ))}
-        </div>
-      </div>
+        </StaggerChildren>
+      </Container>
     </section>
   );
 }

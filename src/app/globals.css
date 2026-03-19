@@ -4,9 +4,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ===== Design Tokens ===== */
+/* ================================================================
+   DESIGN SYSTEM — Johnred Demafeliz Portfolio
+   Aesthetic: Clean & Confident (Stripe / Apple)
+   Fonts: Space Grotesk (display) · Manrope (body) · JetBrains Mono (code)
+   ================================================================ */
+
 @theme inline {
-  /* shadcn semantic colors */
+  /* --- Shadcn semantic color bridge --- */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -26,47 +31,53 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* New design system tokens */
+  /* --- Brand palette --- */
   --color-bg-light: #f6f7f8;
-  --color-bg-dark: #14171e;
+  --color-bg-dark: #0a0f1a;
   --color-accent-teal: #14b8a6;
   --color-accent-cyan: #06b6d4;
 
-  /* Legacy brand colors (backwards compat) */
-  --color-navy: #0F172A;
+  /* --- Extended brand tokens (used across sections) --- */
+  --color-navy: #0f172a;
   --color-slate-blue: #334155;
-  --color-teal: #0F766E;
-  --color-teal-hover: #0E6B63;
-  --color-cyan: #06B6D4;
-  --color-soft-white: #F8FAFC;
-  --color-cool-gray: #CBD5E1;
-  --color-dark: #060A13;
+  --color-teal: #0f766e;
+  --color-teal-hover: #0d9488;
+  --color-cyan: #06b6d4;
+  --color-soft-white: #f8fafc;
+  --color-cool-gray: #cbd5e1;
+  --color-dark: #060a13;
   --color-dark-text: #111827;
-  --color-card-bg: #0B1120;
-  --color-surface: #131C2E;
+  --color-card-bg: #0b1120;
+  --color-surface: #131c2e;
   --color-border-cyan: rgba(6, 182, 212, 0.12);
   --color-glow: rgba(6, 182, 212, 0.08);
 
-  /* Fonts */
+  /* --- Fonts --- */
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
   --font-mono: var(--font-mono-jb);
 
-  /* Radius — tight, not rounded */
-  --radius: 0.125rem;
-  --radius-sm: 0.125rem;
-  --radius-md: 0.1875rem;
-  --radius-lg: 0.25rem;
-  --radius-xl: 0.5rem;
-  --radius-2xl: 0.75rem;
-  --radius-3xl: 1rem;
-  --radius-4xl: 1.25rem;
-  --radius-card: 0.25rem;
-  --radius-button: 0.25rem;
+  /* --- Radius (premium, slightly rounded) --- */
+  --radius: 0.375rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.25rem;
+  --radius-4xl: 1.5rem;
+  --radius-card: 0.75rem;
+  --radius-button: 0.5rem;
   --radius-badge: 100px;
+
+  /* --- Shadows --- */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow-teal: 0 0 20px rgba(20, 184, 166, 0.15), 0 0 60px rgba(20, 184, 166, 0.05);
+  --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.15), 0 0 60px rgba(6, 182, 212, 0.05);
 }
 
-/* ===== Light theme as default ===== */
+/* ===== Light Theme (default) ===== */
 :root {
   --background: #f6f7f8;
   --foreground: #0f1729;
@@ -82,12 +93,37 @@
   --muted-foreground: #64748b;
   --accent: #14b8a6;
   --accent-foreground: #ffffff;
-  --destructive: #EF4444;
+  --destructive: #ef4444;
   --border: rgb(226, 232, 240);
   --input: rgb(226, 232, 240);
   --ring: #14b8a6;
 }
 
+/* ===== Dark Theme ===== */
+.dark {
+  --background: #0a0f1a;
+  --foreground: #f1f5f9;
+  --card: #111827;
+  --card-foreground: #f1f5f9;
+  --popover: #111827;
+  --popover-foreground: #f1f5f9;
+  --primary: #f1f5f9;
+  --primary-foreground: #0a0f1a;
+  --secondary: #1e293b;
+  --secondary-foreground: #f1f5f9;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #14b8a6;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: rgba(148, 163, 184, 0.15);
+  --input: rgba(148, 163, 184, 0.15);
+  --ring: #14b8a6;
+}
+
+/* ================================================================
+   BASE LAYER
+   ================================================================ */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -95,17 +131,31 @@
 
   html {
     @apply font-sans scroll-smooth;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    @apply bg-bg-light text-foreground antialiased;
+    @apply bg-background text-foreground antialiased;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
+
+  /* Focus ring — visible on keyboard, hidden on mouse */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-teal;
+  }
+
+  ::selection {
+    background: rgba(20, 184, 166, 0.2);
+    color: inherit;
+  }
 }
 
-/* ===== Utility Classes ===== */
+/* ================================================================
+   TYPOGRAPHY SYSTEM — Major Third Scale (1.250)
+   Base: 18px → 16 · 18 · 20 · 24 · 30 · 36 · 48 · 60 · 72 · 96
+   ================================================================ */
 @layer components {
   .section-label {
     @apply font-mono text-xs font-bold uppercase text-accent-teal;
@@ -115,40 +165,72 @@
 
   .section-title {
     @apply font-display font-black tracking-tight text-foreground;
-    font-size: 40px;
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
     line-height: 1.05;
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
+  }
+
+  .section-subtitle {
+    @apply text-lg leading-relaxed text-muted-foreground;
+    max-width: 38rem;
   }
 
   @media (min-width: 768px) {
-    .section-title {
-      font-size: 52px;
+    .section-subtitle {
+      @apply text-xl;
     }
   }
 
+  .display-xl {
+    @apply font-display font-black tracking-tighter text-foreground;
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    line-height: 1;
+  }
+
+  .display-2xl {
+    @apply font-display font-black tracking-tighter text-foreground;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: 0.95;
+  }
+
   .body-large {
-    @apply text-lg leading-relaxed text-slate-500;
+    @apply text-lg leading-relaxed text-muted-foreground;
     max-width: 42rem;
   }
 
   @media (min-width: 768px) {
     .body-large {
       @apply text-xl;
+      line-height: 1.65;
     }
   }
 
   .text-balance {
     text-wrap: balance;
   }
+}
 
+/* ================================================================
+   BUTTON SYSTEM (CSS fallback — prefer <Button> component)
+   ================================================================ */
+@layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-primary text-white font-bold text-sm uppercase rounded px-8 py-4 cursor-pointer shadow-xl shadow-primary/20 transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 font-bold text-sm uppercase cursor-pointer transition-all duration-300;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius-button);
     letter-spacing: 0.05em;
+    box-shadow: 0 4px 14px rgba(15, 23, 41, 0.15);
   }
 
   .btn-primary:hover {
-    @apply opacity-90;
     transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(15, 23, 41, 0.2);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
   }
 
   .btn-primary:focus-visible {
@@ -156,21 +238,213 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 bg-transparent text-foreground font-bold text-sm px-8 py-4 rounded-lg border-2 border-slate-200 cursor-pointer transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 font-bold text-sm cursor-pointer transition-all duration-300;
+    color: var(--foreground);
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius-button);
+    border: 1.5px solid var(--border);
+    background: transparent;
   }
 
   .btn-secondary:hover {
-    @apply bg-slate-50;
+    background: var(--secondary);
+    border-color: var(--muted-foreground);
   }
 
   .btn-secondary:focus-visible {
     @apply outline-2 outline-offset-2 outline-accent-teal;
   }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 font-bold text-sm uppercase cursor-pointer transition-all duration-300;
+    background: var(--accent);
+    color: var(--accent-foreground);
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius-button);
+    letter-spacing: 0.05em;
+    box-shadow: var(--shadow-glow-teal);
+  }
+
+  .btn-accent:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 30px rgba(20, 184, 166, 0.25), 0 0 80px rgba(20, 184, 166, 0.08);
+  }
+
+  .btn-accent:active {
+    transform: translateY(0);
+  }
+
+  .btn-accent:focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-teal;
+  }
 }
 
-/* ===== Reduced Motion ===== */
+/* ================================================================
+   GLASS & PREMIUM EFFECTS
+   ================================================================ */
+@layer components {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .dark .glass-panel {
+    background: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+  }
+
+  .glass-panel-strong {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .dark .glass-panel-strong {
+    background: rgba(17, 24, 39, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+  }
+
+  .glow-border {
+    position: relative;
+  }
+
+  .glow-border::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.4), rgba(6, 182, 212, 0.4));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .glow-border:hover::after {
+    opacity: 1;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-premium {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  }
+
+  .bg-gradient-glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  }
+
+  .bg-gradient-cta {
+    background: linear-gradient(135deg, #0f172a 0%, #0b1120 40%, #0f172a 100%);
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Skeleton loading shimmer */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--muted) 25%,
+      var(--secondary) 50%,
+      var(--muted) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+    border-radius: var(--radius-md);
+  }
+
+  @keyframes skeleton-pulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
+
+/* ================================================================
+   LAYOUT UTILITIES
+   ================================================================ */
+@layer components {
+  .container-default {
+    @apply mx-auto w-full;
+    max-width: 80rem;
+    padding-left: clamp(1.5rem, 4vw, 3rem);
+    padding-right: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .section-padding {
+    padding-top: clamp(6rem, 10vw, 10rem);
+    padding-bottom: clamp(6rem, 10vw, 10rem);
+  }
+
+  .section-padding-sm {
+    padding-top: clamp(4rem, 6vw, 5rem);
+    padding-bottom: clamp(4rem, 6vw, 5rem);
+  }
+}
+
+/* ================================================================
+   SCROLL PROGRESS BAR
+   ================================================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-teal), var(--accent-cyan));
+  z-index: 9999;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
 @media (prefers-reduced-motion: reduce) {
   .animate-ping {
     animation: none !important;
+  }
+
+  .shimmer::after {
+    animation: none !important;
+  }
+
+  .skeleton {
+    animation: none !important;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

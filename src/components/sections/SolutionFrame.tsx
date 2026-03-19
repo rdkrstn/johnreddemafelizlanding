@@ -1,6 +1,8 @@
 "use client";
 
-import FadeIn from "@/components/animations/FadeIn";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import { Container } from "@/components/ui/container";
+import { GlassPanel } from "@/components/ui/glass-panel";
 
 const checkpoints = [
   "Unified CRM & Sales Automation",
@@ -10,11 +12,11 @@ const checkpoints = [
 
 export default function SolutionFrame() {
   return (
-    <section className="py-28 sm:py-32 md:py-40" aria-label="The Solution">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+    <section className="py-24 md:py-32 lg:py-40" aria-label="The Solution">
+      <Container>
+        <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
           {/* Left column - Visual frame */}
-          <FadeIn direction="left">
+          <ScrollReveal variant="scale">
             <div className="relative aspect-video overflow-hidden rounded-xl bg-primary shadow-2xl">
               {/* Gradient overlay */}
               <div
@@ -39,12 +41,9 @@ export default function SolutionFrame() {
 
               {/* Floating glass card centered */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div
-                  className="flex flex-col items-center gap-3 rounded-xl border border-white/15 px-8 py-6"
-                  style={{
-                    background: "rgba(255,255,255,0.08)",
-                    backdropFilter: "blur(20px)",
-                  }}
+                <GlassPanel
+                  glow
+                  className="flex flex-col items-center gap-3 rounded-xl px-8 py-6"
                 >
                   {/* Revenue Architecture icon */}
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent-teal/20">
@@ -68,35 +67,35 @@ export default function SolutionFrame() {
                   <span className="font-mono text-xs font-bold uppercase tracking-widest text-white/90">
                     Revenue Architecture
                   </span>
-                </div>
+                </GlassPanel>
               </div>
             </div>
-          </FadeIn>
+          </ScrollReveal>
 
           {/* Right column - Text content */}
           <div>
-            <FadeIn>
+            <ScrollReveal variant="slide-right" delay={0}>
               <p className="section-label text-accent-cyan">
                 The Solution
               </p>
-            </FadeIn>
+            </ScrollReveal>
 
-            <FadeIn delay={0.1}>
+            <ScrollReveal variant="slide-right" delay={0.1}>
               <h2 className="section-title">
                 Revenue Systems as a Product
               </h2>
-            </FadeIn>
+            </ScrollReveal>
 
-            <FadeIn delay={0.15}>
-              <p className="mb-10 text-lg leading-relaxed text-slate-500">
+            <ScrollReveal variant="slide-right" delay={0.15}>
+              <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
                 I don&apos;t just &ldquo;consult.&rdquo; I build the
                 infrastructure your revenue depends on. Every system is
                 engineered to capture, nurture, and convert &mdash; without
                 adding headcount or ad spend.
               </p>
-            </FadeIn>
+            </ScrollReveal>
 
-            <FadeIn delay={0.2}>
+            <ScrollReveal variant="slide-right" delay={0.2}>
               <div className="mb-10 flex flex-col space-y-5">
                 {checkpoints.map((point) => (
                   <div key={point} className="flex items-start gap-3">
@@ -112,20 +111,20 @@ export default function SolutionFrame() {
                   </div>
                 ))}
               </div>
-            </FadeIn>
+            </ScrollReveal>
 
-            <FadeIn delay={0.3}>
+            <ScrollReveal variant="slide-right" delay={0.3}>
               <a
-                href="#framework"
-                className="inline-block rounded bg-primary px-10 py-4 font-bold text-white transition-colors hover:bg-accent-teal"
+                href="/case-studies"
+                className="btn-primary"
                 aria-label="View the framework"
               >
-                View The Framework
+                View The Framework &rarr;
               </a>
-            </FadeIn>
+            </ScrollReveal>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -1,23 +1,28 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
+import ScrollProgress from "@/components/animations/ScrollProgress";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const manrope = Manrope({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono-jb",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -54,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${spaceGrotesk.variable} ${manrope.variable} ${jetbrainsMono.variable} antialiased`}
       >
@@ -64,7 +69,37 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  name: "Johnred Demafeliz",
+                  url: "https://johnred.dev",
+                  description:
+                    "Revenue systems consultant for coaches, educators, and service founders.",
+                  founder: {
+                    "@type": "Person",
+                    name: "Johnred Demafeliz",
+                    jobTitle: "Revenue Systems Consultant",
+                  },
+                },
+                {
+                  "@type": "WebSite",
+                  name: "Johnred Demafeliz",
+                  url: "https://johnred.dev",
+                },
+              ],
+            }),
+          }}
+        />
+        <ScrollProgress />
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

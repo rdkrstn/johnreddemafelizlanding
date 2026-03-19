@@ -1,6 +1,11 @@
 "use client";
 
-import FadeIn from "@/components/animations/FadeIn";
+import Link from "next/link";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import TextReveal from "@/components/animations/TextReveal";
+import CountUp from "@/components/animations/CountUp";
+import MagneticButton from "@/components/animations/MagneticButton";
+import StaggerChildren from "@/components/animations/StaggerChildren";
 
 export default function Hero() {
   return (
@@ -8,109 +13,134 @@ export default function Hero() {
       className="relative overflow-hidden pt-28 pb-32 px-6 border-b border-slate-100"
       aria-label="Hero"
     >
-      {/* Large blur glow */}
+      {/* Background glow orbs */}
       <div
         className="pointer-events-none absolute -top-20 -right-20 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl"
         aria-hidden="true"
       />
+      <div
+        className="pointer-events-none absolute top-40 -left-32 w-80 h-80 bg-accent-teal/8 rounded-full blur-3xl"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left column */}
           <div>
-            <FadeIn>
-              {/* Badge */}
-              <span className="inline-flex items-center gap-2 rounded-full bg-accent-teal/10 text-accent-teal text-xs font-bold uppercase tracking-widest px-4 py-2 mb-8">
+            {/* Badge */}
+            <ScrollReveal variant="fade">
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent-teal/15 text-teal text-xs font-bold uppercase tracking-widest px-4 py-2 mb-8">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-teal opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-teal" />
                 </span>
                 Currently accepting engagements
               </span>
-            </FadeIn>
+            </ScrollReveal>
 
-            <FadeIn delay={0.1}>
-              {/* Headline */}
-              <h1 className="font-display text-6xl md:text-8xl font-black leading-[1.05] text-primary mb-6" style={{ letterSpacing: "-0.04em" }}>
-                Fix the gaps that are{" "}
-                <em className="italic text-accent-teal">costing</em>{" "}
-                you leads.
-              </h1>
-            </FadeIn>
+            {/* Headline */}
+            <TextReveal
+              text="Fix the gaps that are costing you leads."
+              as="h1"
+              className="display-2xl text-primary mb-6"
+              delay={0.1}
+              staggerDelay={0.05}
+            />
 
             {/* Thin horizontal rule */}
             <div className="border-b border-slate-100 mb-6" aria-hidden="true" />
 
-            <FadeIn delay={0.2}>
-              {/* Subtitle */}
-              <p className="font-sans text-xl text-slate-500 max-w-lg leading-relaxed mb-10">
+            {/* Subtitle */}
+            <ScrollReveal variant="fade" delay={0.3}>
+              <p className="font-sans text-xl text-slate-600 max-w-lg leading-relaxed mb-10">
                 Revenue Systems Consultant for coaches, educators, and service
                 founders. I build the infrastructure your revenue depends on.
               </p>
-            </FadeIn>
+            </ScrollReveal>
 
-            <FadeIn delay={0.3}>
-              {/* Dual CTAs */}
+            {/* Dual CTAs */}
+            <ScrollReveal variant="slide-up" delay={0.4}>
               <div className="flex flex-wrap items-center gap-4">
-                <a
-                  href="/book-a-call"
-                  className="bg-primary text-white px-8 py-4 font-bold rounded-lg shadow-xl shadow-primary/20 transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5"
-                  aria-label="Book a strategy call"
-                >
-                  Book a Strategy Call &rarr;
-                </a>
-                <a
+                <MagneticButton>
+                  <Link
+                    href="/book-a-call"
+                    className="btn-primary"
+                    aria-label="Book a strategy call"
+                  >
+                    Book a Strategy Call &rarr;
+                  </Link>
+                </MagneticButton>
+                <Link
                   href="/#results"
-                  className="border-2 border-slate-200 px-8 py-4 font-bold rounded-lg transition-all duration-300 hover:bg-slate-50"
+                  className="btn-secondary"
                   aria-label="View case studies"
                 >
                   View Case Studies
-                </a>
+                </Link>
               </div>
-            </FadeIn>
+            </ScrollReveal>
           </div>
 
           {/* Right column - 2x2 metric cards */}
-          <FadeIn delay={0.2} direction="right">
-            <div className="grid grid-cols-2 gap-5">
-              {/* Column 1 — offset down */}
+          <ScrollReveal variant="slide-right" delay={0.2}>
+            <StaggerChildren staggerDelay={0.12} className="grid grid-cols-2 gap-5">
+              {/* Column 1 - offset down */}
               <div className="flex flex-col gap-5 mt-10">
                 {/* Card 1: Lead Conversion */}
-                <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-8">
+                <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-8 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
                   <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-3">
                     Lead Conversion
                   </p>
-                  <p className="font-display text-4xl font-black text-primary">
-                    +42%
-                  </p>
+                  <CountUp
+                    end={42}
+                    prefix="+"
+                    suffix="%"
+                    className="font-display text-4xl font-black text-primary"
+                  />
                 </div>
 
                 {/* Card 3: Admin Time */}
-                <div className="bg-accent-teal text-white rounded-xl shadow-lg p-8">
-                  <p className="text-teal-100 text-xs uppercase font-bold tracking-widest mb-3">
+                <div className="bg-accent-teal text-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+                  <p className="text-white/80 text-xs uppercase font-bold tracking-widest mb-3">
                     Admin Time
                   </p>
-                  <p className="font-display text-4xl font-black text-accent-cyan">
-                    -60%
-                  </p>
+                  <CountUp
+                    end={60}
+                    prefix="-"
+                    suffix="%"
+                    className="font-display text-4xl font-black text-white"
+                  />
                 </div>
               </div>
 
               {/* Column 2 */}
               <div className="flex flex-col gap-5">
                 {/* Card 2: ROI Tracking */}
-                <div className="bg-primary text-white rounded-xl shadow-xl p-8">
-                  <p className="text-teal-100 text-xs uppercase font-bold tracking-widest mb-3">
+                <div className="bg-primary text-white rounded-xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
+                  <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-3">
                     ROI Tracking
                   </p>
-                  <p className="font-display text-4xl font-black">100%</p>
+                  <CountUp
+                    end={100}
+                    suffix="%"
+                    className="font-display text-4xl font-black"
+                  />
                 </div>
 
-                {/* Card 4: Placeholder image */}
-                <div className="bg-slate-200 rounded-xl aspect-square" />
+                {/* Card 4: Pipeline Velocity */}
+                <div className="bg-white border border-accent-teal/20 rounded-xl shadow-sm p-8 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 hover:border-accent-teal/40">
+                  <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-3">
+                    Pipeline Velocity
+                  </p>
+                  <CountUp
+                    end={3}
+                    suffix="x"
+                    className="font-display text-4xl font-black text-accent-teal"
+                  />
+                </div>
               </div>
-            </div>
-          </FadeIn>
+            </StaggerChildren>
+          </ScrollReveal>
         </div>
       </div>
     </section>

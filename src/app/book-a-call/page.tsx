@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FadeIn from "@/components/animations/FadeIn";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import TextReveal from "@/components/animations/TextReveal";
+import StaggerChildren from "@/components/animations/StaggerChildren";
+import { Container } from "@/components/ui/container";
 
 export const metadata: Metadata = {
   title: "Book a Call",
@@ -12,7 +15,7 @@ export const metadata: Metadata = {
 
 const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ||
-  "https://calendly.com/johnred/strategy-call";
+  "https://calendly.com/flow-systems/strategy-call";
 
 const benefits = [
   {
@@ -33,7 +36,7 @@ const benefits = [
       </svg>
     ),
     title: "15-min deep dive",
-    description: "Structured strategy session. No filler.",
+    description: "Laser-focused strategy session. No filler.",
   },
   {
     icon: (
@@ -53,7 +56,7 @@ const benefits = [
       </svg>
     ),
     title: "No-pitch strategy",
-    description: "Diagnostic-first. No pitch.",
+    description: "Pure value, no sales pressure.",
   },
   {
     icon: (
@@ -71,8 +74,8 @@ const benefits = [
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    title: "Immediate action plan",
-    description: "Leave with a prioritized list of fixes for your system",
+    title: "Immediate Action Plan",
+    description: "Walk away with clear next steps.",
   },
 ];
 
@@ -81,39 +84,41 @@ export default function BookACallPage() {
     <>
       <Navbar />
 
-      <main className="max-w-6xl mx-auto px-6 py-12 md:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* ---- LEFT COLUMN ---- */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            {/* Badge */}
-            <FadeIn>
-              <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-                Available for Consultation
-              </span>
-            </FadeIn>
+      <main className="py-12 md:py-20">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* ---- LEFT COLUMN ---- */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              {/* Badge */}
+              <ScrollReveal variant="fade">
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
+                  Available for Consultation
+                </span>
+              </ScrollReveal>
 
-            {/* Headline */}
-            <FadeIn delay={0.05}>
-              <h1 className="font-display text-5xl font-black leading-tight tracking-tighter text-foreground">
-                Optimize Your
-                <br />
-                Revenue Systems
-              </h1>
-            </FadeIn>
+              {/* Headline */}
+              <TextReveal
+                text="Optimize Your Revenue Systems"
+                as="h1"
+                className="display-xl"
+              />
 
-            {/* Subtitle */}
-            <FadeIn delay={0.1}>
-              <p className="text-lg text-slate-600 leading-relaxed max-w-md">
-                Let&apos;s identify the three highest-leverage gaps in your
-                current systems and map the fix.
-              </p>
-            </FadeIn>
+              {/* Subtitle */}
+              <ScrollReveal variant="fade" delay={0.2}>
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
+                  Let&apos;s identify the bottlenecks in your growth engine and
+                  build a scalable roadmap for your business. A
+                  distraction-free deep dive into your operations.
+                </p>
+              </ScrollReveal>
 
-            {/* Benefit Cards */}
-            <div className="flex flex-col gap-3">
-              {benefits.map((benefit, i) => (
-                <FadeIn key={benefit.title} delay={0.15 + i * 0.07}>
-                  <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-start gap-4 transition-all duration-300 hover:shadow-md">
+              {/* Benefit Cards */}
+              <StaggerChildren className="flex flex-col gap-3">
+                {benefits.map((benefit) => (
+                  <div
+                    key={benefit.title}
+                    className="group p-4 rounded-xl bg-card border border-border shadow-sm flex items-start gap-4 transition-all duration-300 hover:shadow-md"
+                  >
                     <span className="shrink-0 h-10 w-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
                       {benefit.icon}
                     </span>
@@ -121,38 +126,38 @@ export default function BookACallPage() {
                       <p className="text-sm font-bold text-foreground">
                         {benefit.title}
                       </p>
-                      <p className="text-xs text-slate-500">
+                      <p className="text-xs text-muted-foreground">
                         {benefit.description}
                       </p>
                     </div>
                   </div>
-                </FadeIn>
-              ))}
+                ))}
+              </StaggerChildren>
+
+              {/* Testimonial */}
+              <ScrollReveal variant="fade" delay={0.3}>
+                <div className="border-t border-border pt-8 mt-4">
+                  <p className="text-sm text-muted-foreground italic leading-relaxed">
+                    &ldquo;The most productive 15 minutes of our quarter. Johnred
+                    dismantled our churn problem in minutes.&rdquo;
+                  </p>
+                  <p className="mt-3 text-sm font-bold text-foreground">
+                    &mdash; Growth Lead @ TechScale
+                  </p>
+                </div>
+              </ScrollReveal>
             </div>
 
-            {/* Testimonial */}
-            <FadeIn delay={0.4}>
-              <div className="border-t border-slate-200 pt-8 mt-4">
-                <p className="text-sm text-slate-500 italic leading-relaxed">
-                  &ldquo;From 22% show-up to 58% in 60 days. Same ads, same
-                  offer. The system changed everything.&rdquo;
-                </p>
-                <p className="mt-3 text-sm font-bold text-foreground">
-                  &mdash; Marco C., Business Strategy Coach
-                </p>
-              </div>
-            </FadeIn>
+            {/* ---- RIGHT COLUMN: Calendly ---- */}
+            <div className="lg:col-span-7">
+              <ScrollReveal variant="slide-right" delay={0.2}>
+                <div className="bg-card rounded-xl border border-border shadow-xl overflow-hidden">
+                  <CalendlyEmbed url={CALENDLY_URL} />
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
-
-          {/* ---- RIGHT COLUMN: Calendly ---- */}
-          <div className="lg:col-span-7">
-            <FadeIn delay={0.2} direction="right">
-              <div className="bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden">
-                <CalendlyEmbed url={CALENDLY_URL} />
-              </div>
-            </FadeIn>
-          </div>
-        </div>
+        </Container>
       </main>
 
       <Footer />

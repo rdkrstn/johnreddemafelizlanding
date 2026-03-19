@@ -2,6 +2,9 @@
 
 import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import MagneticButton from "@/components/animations/MagneticButton";
 
 const NAV_LINKS = [
   { label: "Systems", href: "/#solution" },
@@ -12,6 +15,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   const toggleMobile = useCallback(() => {
     setMobileOpen((prev) => !prev);
@@ -25,6 +29,8 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 8);
     };
+    // Check initial scroll position on mount
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -40,21 +46,36 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
+  /**
+   * Determine if a nav link is "active":
+   * - Hash links (/#solution) are active when on homepage
+   * - Path links (/case-studies) match the current pathname
+   */
+  const isActive = (href: string) => {
+    if (href.startsWith("/#")) {
+      return pathname === "/";
+    }
+    return pathname === href;
+  };
+
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-slate-200 transition-all duration-300 ${
-        scrolled ? "bg-white/80 backdrop-blur-md" : "bg-white/80 backdrop-blur-md"
-      }`}
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-500 ease-out",
+        scrolled
+          ? "glass-panel-strong border-b border-slate-200/60 shadow-sm"
+          : "bg-transparent border-b border-transparent"
+      )}
     >
       <nav
-        className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 sm:px-7"
+        className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-7"
         role="navigation"
         aria-label="Main navigation"
       >
         {/* Brand */}
         <Link
           href="/"
-          className="flex items-center gap-2 select-none"
+          className="flex items-center gap-2.5 select-none group"
           aria-label="Johnred Demafeliz - Home"
         >
           {/* Layers icon */}
@@ -68,13 +89,13 @@ export default function Navbar() {
             aria-hidden="true"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-primary"
+            className="text-primary transition-transform duration-300 group-hover:scale-110"
           >
             <polygon points="12 2 2 7 12 12 22 7 12 2" />
             <polyline points="2 17 12 22 22 17" />
             <polyline points="2 12 12 17 22 12" />
           </svg>
-          <span className="text-xl font-bold tracking-tight text-primary uppercase">
+          <span className="font-display text-xl font-bold tracking-tight text-primary uppercase">
             Johnred Demafeliz
           </span>
         </Link>
@@ -85,21 +106,36 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-slate-500 transition-colors duration-200 hover:text-primary"
+                className={cn(
+                  "relative text-sm font-medium transition-colors duration-200",
+                  isActive(link.href)
+                    ? "text-primary"
+                    : "text-slate-500 hover:text-primary"
+                )}
               >
                 {link.label}
+                {/* Active indicator line */}
+                <span
+                  className={cn(
+                    "absolute -bottom-1 left-0 h-px w-full origin-left bg-accent-teal transition-transform duration-300 ease-out",
+                    isActive(link.href) ? "scale-x-100" : "scale-x-0"
+                  )}
+                  aria-hidden="true"
+                />
               </Link>
             </li>
           ))}
         </ul>
 
         {/* Desktop CTA */}
-        <Link
-          href="/book-a-call"
-          className="hidden items-center bg-primary text-white px-6 py-2.5 text-sm font-bold uppercase rounded tracking-wider transition-all duration-200 hover:opacity-90 hover:-translate-y-px md:inline-flex"
-        >
-          Book Call
-        </Link>
+        <MagneticButton className="hidden md:block">
+          <Link
+            href="/book-a-call"
+            className="btn-primary text-xs"
+          >
+            Book Call
+          </Link>
+        </MagneticButton>
 
         {/* Mobile hamburger */}
         <button
@@ -114,19 +150,22 @@ export default function Navbar() {
             {mobileOpen ? "Close menu" : "Open menu"}
           </span>
           <span
-            className={`absolute h-[1.5px] w-5 rounded-full bg-current transition-all duration-300 ease-in-out ${
+            className={cn(
+              "absolute h-[1.5px] w-5 rounded-full bg-current transition-all duration-300 ease-in-out",
               mobileOpen ? "translate-y-0 rotate-45" : "-translate-y-1.5"
-            }`}
+            )}
           />
           <span
-            className={`absolute h-[1.5px] w-5 rounded-full bg-current transition-all duration-300 ease-in-out ${
+            className={cn(
+              "absolute h-[1.5px] w-5 rounded-full bg-current transition-all duration-300 ease-in-out",
               mobileOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"
-            }`}
+            )}
           />
           <span
-            className={`absolute h-[1.5px] w-5 rounded-full bg-current transition-all duration-300 ease-in-out ${
+            className={cn(
+              "absolute h-[1.5px] w-5 rounded-full bg-current transition-all duration-300 ease-in-out",
               mobileOpen ? "translate-y-0 -rotate-45" : "translate-y-1.5"
-            }`}
+            )}
           />
         </button>
       </nav>
@@ -134,19 +173,30 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         id="mobile-menu"
-        className={`overflow-hidden border-t border-slate-200 bg-white transition-all duration-300 ease-in-out md:hidden ${
-          mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={cn(
+          "overflow-hidden transition-all duration-300 ease-in-out md:hidden",
+          scrolled
+            ? "glass-panel-strong"
+            : "bg-white/95 backdrop-blur-xl",
+          mobileOpen
+            ? "max-h-80 opacity-100 border-t border-slate-200/60"
+            : "max-h-0 opacity-0 border-t border-transparent"
+        )}
         aria-hidden={!mobileOpen}
         inert={!mobileOpen ? true : undefined}
       >
-        <div className="mx-auto max-w-6xl px-5 py-4">
+        <div className="mx-auto max-w-7xl px-5 py-4">
           <ul className="flex flex-col gap-1" role="list">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block rounded px-3 py-2.5 text-sm font-medium text-slate-600 transition-all duration-200 hover:bg-slate-50 hover:text-primary"
+                  className={cn(
+                    "block rounded-lg px-4 py-3 text-sm font-medium transition-all duration-200",
+                    isActive(link.href)
+                      ? "bg-slate-50 text-primary"
+                      : "text-slate-600 hover:bg-slate-50 hover:text-primary"
+                  )}
                   onClick={closeMobile}
                 >
                   {link.label}
@@ -154,10 +204,10 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-4 border-t border-slate-200 pt-4">
+          <div className="mt-4 border-t border-slate-200/60 pt-4">
             <Link
               href="/book-a-call"
-              className="flex w-full items-center justify-center rounded bg-primary px-5 py-3 text-sm font-bold uppercase tracking-wider text-white transition-colors duration-200 hover:opacity-90"
+              className="btn-primary flex w-full justify-center text-xs"
               onClick={closeMobile}
             >
               Book Call
