@@ -6,12 +6,13 @@ import { Container } from "@/components/ui/container";
 import {
   Code2,
   Atom,
-  Workflow,
+  Users,
   FileText,
   CreditCard,
   Triangle,
   Palette,
   FileCode,
+  Bot,
 } from "lucide-react";
 
 const technologies = [
@@ -24,8 +25,8 @@ const technologies = [
     icon: <Atom size={32} strokeWidth={1.5} aria-hidden="true" />,
   },
   {
-    name: "GoHighLevel",
-    icon: <Workflow size={32} strokeWidth={1.5} aria-hidden="true" />,
+    name: "CRM Platforms",
+    icon: <Users size={32} strokeWidth={1.5} aria-hidden="true" />,
   },
   {
     name: "Sanity CMS",
@@ -46,6 +47,10 @@ const technologies = [
   {
     name: "TypeScript",
     icon: <FileCode size={32} strokeWidth={1.5} aria-hidden="true" />,
+  },
+  {
+    name: "Conversational AI",
+    icon: <Bot size={32} strokeWidth={1.5} aria-hidden="true" />,
   },
 ] as const;
 
@@ -69,7 +74,7 @@ export default function TechStack() {
 
         {/* Tech grid */}
         <ScrollReveal variant="fade" delay={0.15}>
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-8">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-9">
             {technologies.map((tech) => (
               <div
                 key={tech.name}

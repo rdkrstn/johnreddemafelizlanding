@@ -8,7 +8,7 @@ export const fallbackCaseStudies = [
     problem:
       "A financial literacy coaching business running live workshops was managing everything manually — leads scattered in DMs and spreadsheets, no follow-up system, no way to track which ads were converting, and no pipeline from workshop attendees to their premium Mastery program.",
     solution:
-      "Built a custom Next.js landing funnel connected to GoHighLevel CRM for automated lead capture and follow-up sequences. Integrated PayMongo for seamless payments, Sanity CMS for dynamic content, and a real-time analytics dashboard to track ad spend, bookings, and conversion rates.",
+      "Built a custom Next.js landing funnel connected to a CRM backbone (GoHighLevel) for automated lead capture and follow-up sequences. Integrated PayMongo for seamless payments, Sanity CMS for dynamic content, and a real-time analytics dashboard to track ad spend, bookings, and conversion rates.",
     result:
       "Transformed from zero digital infrastructure to a fully automated workshop-to-program pipeline. Every lead is now captured, nurtured, and tracked — from first ad click to Mastery program enrollment.",
     keyMetric: "0 → 1",

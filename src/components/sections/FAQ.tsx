@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: "I\u2019m not technical. Will I be able to manage the system?",
     answer:
-      "Absolutely. I build systems that non-technical founders can manage day-to-day. You\u2019ll get a Sanity CMS dashboard for content, GoHighLevel for your CRM, and a metrics dashboard \u2014 all with training.",
+      "Absolutely. I build systems that non-technical founders can manage day-to-day. You\u2019ll get a Sanity CMS dashboard for content, your preferred CRM (GoHighLevel, HubSpot, or whatever you already use), and a metrics dashboard \u2014 all with training.",
   },
 ] as const;
 

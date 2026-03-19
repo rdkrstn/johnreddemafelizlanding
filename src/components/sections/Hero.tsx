@@ -54,9 +54,9 @@ export default function Hero() {
             <ScrollReveal variant="fade" delay={0.3}>
               <p className="font-sans text-xl text-slate-600 max-w-lg leading-relaxed mb-10">
                 You run workshops, webinars, and high-ticket programs. I build
-                the funnel infrastructure that captures every lead from your
-                ads and turns attendees into paying enrollees &mdash;
-                automatically.
+                custom funnels, CRM automation, and AI-powered follow-up
+                that captures every lead from your ads and turns attendees
+                into paying enrollees &mdash; automatically.
               </p>
             </ScrollReveal>
 

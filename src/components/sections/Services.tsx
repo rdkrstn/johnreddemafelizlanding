@@ -28,7 +28,8 @@ const services = [
     tagline: "For established programs ready to scale",
     includes: [
       "Full ad-to-enrollment funnel",
-      "GoHighLevel CRM + automations",
+      "CRM setup + automations (GHL, HubSpot, or your preferred tool)",
+      "AI-powered lead qualification chatbot",
       "Multi-step follow-up sequences",
       "Analytics dashboard",
       "Workshop/webinar registration system",
@@ -44,6 +45,7 @@ const services = [
       "Everything in Growth Engine",
       "Custom Next.js frontend",
       "API integrations (payments, SMS, email)",
+      "Conversational AI for automated follow-up & booking",
       "Sanity CMS for content management",
       "Ongoing optimization & support",
     ],

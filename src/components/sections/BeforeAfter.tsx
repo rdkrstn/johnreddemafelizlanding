@@ -18,6 +18,7 @@ const outcomes = [
   "Smart follow-up sequences running 24/7",
   "Real-time dashboard showing ad \u2192 enrollment metrics",
   "Workshop attendees nurtured into program buyers",
+  "AI chatbot qualifies and follows up with leads automatically",
   "You focus on coaching, the system handles the rest",
 ] as const;
 

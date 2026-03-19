@@ -55,10 +55,11 @@ export default function FounderSection() {
                 </p>
                 <p className="font-sans text-lg leading-relaxed text-muted-foreground">
                   My stack combines custom-built Next.js applications with
-                  GoHighLevel, Sanity CMS, and payment integrations like
-                  PayMongo &mdash; so you get the power of custom code with the
-                  speed of proven platforms. I adapt to your budget and needs,
-                  not the other way around.
+                  your preferred CRM &mdash; whether that&apos;s GoHighLevel,
+                  HubSpot, or something else &mdash; alongside Sanity CMS and
+                  payment integrations like PayMongo. You get the power of
+                  custom code with the speed of proven platforms. I adapt to
+                  your budget and needs, not the other way around.
                 </p>
                 <p className="font-sans text-lg leading-relaxed text-muted-foreground">
                   I understand your world: workshops that sell through trust,

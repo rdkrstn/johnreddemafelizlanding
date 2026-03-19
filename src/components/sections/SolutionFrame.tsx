@@ -9,6 +9,7 @@ const checkpoints = [
   "Automated lead capture from every ad and landing page",
   "Smart follow-up sequences that nurture workshop attendees into buyers",
   "Real-time dashboard showing exactly which ads drive enrollments",
+  "AI-powered chatbot that qualifies leads and books calls while you sleep",
 ] as const;
 
 export default function SolutionFrame() {

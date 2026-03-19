@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | Johnred Demafeliz",
   },
   description:
-    "I build custom funnel infrastructure for workshop leaders and high-ticket program owners. From ad click to program enrollment — automated lead capture, follow-up sequences, and real-time dashboards.",
+    "I build custom funnel infrastructure, CRM automation, and conversational AI for workshop leaders and high-ticket program owners. From ad click to program enrollment — automated lead capture, AI-powered follow-up, and real-time dashboards.",
   openGraph: {
     title: "Johnred Demafeliz | Revenue Systems Architect",
     description:

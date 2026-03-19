@@ -26,7 +26,7 @@ const steps = [
     icon: <Wrench size={28} strokeWidth={1.5} aria-hidden="true" />,
     title: "Build",
     description:
-      "I build everything \u2014 custom funnels, CRM setup, payment integration, automations \u2014 and connect it all.",
+      "I build everything \u2014 custom funnels, CRM setup, AI chatbots, payment integration, automations \u2014 and connect it all.",
   },
   {
     number: "04",
